@@ -1,0 +1,2519 @@
+/*Папка для стилевых файлов.
+Пример структуры файлов:
+css/
+| - style.css
+| - normalize.css
+| - [другие *.css файлы]
+
+font-family: "Cuprum", sans-serif;
+font-family: "PT Sans", sans-serif;
+*/
+
+/*  В какой последовательности лучше прописывать свойства?
+    # 1- позиционирование
+      2- размер
+      3- цвет/картинки и т.п.
+
+    Существуют ли общие предпочтения?
+    Допустимо ли между группами свойств оставлять пустую строку и комментарий для лучшшей читаемости? 
+
+*/
+
+
+body {
+  font-size: 12px;
+  line-height: 1;
+  color: black;
+  font-weight: normal;
+  font-family: "Cuprum", "PT Sans", sans-serif;
+  background: #ffffff;
+}
+
+h1 {
+  font-size: 18px;
+  color: #000000;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 16px;
+  color:  #000000;
+  font-weight: normal;
+}
+
+/* Header */
+
+.container-header {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding-bottom: 65px;
+  background-color: #f1f5f7;
+}
+
+/* panel */
+
+.panel {
+  color: #ffffff;
+  background: #293449;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+.panel-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 940px;
+  margin: 0 auto;
+}
+
+.index-logo {
+  width: 220px;
+  font-size: 24px;
+  line-height: 24px;
+  text-align: center;
+  vertical-align: top;
+  text-transform: uppercase;
+}
+
+.index-logo a {  
+  display: block;
+  color: #ffffff;
+  background-color:#ee3643;
+  box-shadow: 0 5px #b52933;
+  text-decoration: none;
+  font-size: 24px;
+  line-height: 24px;
+  vertical-align: top;
+  padding: 9px;
+}
+
+.index-logo a:hover{
+  background-color:#ca2c37;
+  box-shadow: 0 5px #9a212a;
+} 
+
+.index-logo a:activ {
+  background-color:#ba2732;
+  box-shadow: 0 5px #8e1e26;
+}
+
+/* .search */
+/* Здесь я запуталась и не могу разобраться, как сделать, чтобы "лупа" отражалась, когда курсор находится в поле поиска и вводится текст. Мне в принципе не полностью понятен механизм, как правильно это осуществить. И у меня они (лупа и поле) как бы "не едиными" получились...  */
+
+.search-field {
+  width: 275px;
+  position: relative;
+}
+
+.search {
+  color: #ffffff;
+  background-color: #293449;
+  border: none;
+  text-align: left;
+  font-size: 17px;
+  line-height: 18px;
+  vertical-align: top;
+  padding: 12px 0;
+  padding-left: 50px;
+  color: #ffffff;
+}
+
+.btn-search {
+  position: absolute;
+  width: 50px;
+  height: 42px;
+  cursor:pointer;
+  left: 0px;
+  background-color: inherit;
+  border: none;
+}
+
+.btn-search::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("../img/sprite.png");
+  background-repeat: no-repeat;
+  width: 17px;
+  height: 17px;
+  background-position: -10px -640px;
+  opacity: 0.3;
+}
+
+
+.btn-search:hover::after{
+  opacity:1;
+}
+
+.btn-search:active::after{
+  width: 17px;
+  height: 17px;
+  background-position: -10px -677px;
+  opacity:1;
+}
+/*
+
+.search:focus .btn-search::after{
+  width: 17px;
+  height: 17px;
+  background-position: -10px -677px;
+  opacity:1;
+}
+*/
+
+.search-field input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+ color:#ffffff;
+ opacity: 1;
+}
+
+.search-field input::-moz-placeholder { /* Firefox 19+ */
+ color:#ffffff;
+ opacity: 1;
+}
+
+.search-field input:-ms-input-placeholder { /* IE 10+ */
+ color:#ffffff;
+ opacity: 1;
+}
+
+.search-field input:-moz-placeholder { /* Firefox 18- */
+ color:#ffffff;
+ opacity: 1;
+}
+
+.search-field input:focus {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.search-field:focus::before {
+  background-position: -10px -677px;
+  opacity: 1;
+}
+
+.search-field input:focus::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+ color: #000000;
+ opacity: 1;
+}
+
+.search-field input:focus::-moz-placeholder { /* Firefox 19+ */
+ color: #000000;
+ opacity: 1;
+}
+
+.search-field input:focus:-ms-input-placeholder { /* IE 10+ */
+ color: #000000;
+ opacity: 1;
+}
+
+.search-field input:focus:-moz-placeholder { /* Firefox 18- */
+ color: #000000;
+ opacity: 1;
+}
+
+/* .btn-panel */
+
+.btn-panel {
+  width: 150px;
+  text-align: center;
+}
+
+.btn-panel a {  
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 17px;
+  line-height: 18px;
+  vertical-align: middle;
+  padding: 12px;
+  padding-bottom: 12px;
+}
+
+.btn-bookmark {
+  position: relative;
+}
+
+.btn-bookmark::before {
+   content: "";
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform:translate(-50%, -50%);
+  background-image: url("../img/sprite.png");
+  background-repeat: no-repeat;
+  width: 14px;
+  height: 16px;
+  background-position: -10px -46px;
+  opacity: 0.3;
+}
+
+.btn-cart {
+  position: relative;
+}
+
+.btn-cart::before {
+   content: "";
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform:translate(-50%, -50%);
+  background-image: url("../img/sprite.png");
+  background-repeat: no-repeat;
+  width: 17px;
+  height: 16px;
+  background-position: -10px -10px;
+  opacity: 0.3;
+}
+
+.btn-bookmark:hover::before, .btn-cart:hover::before {
+  opacity: 1;
+}
+
+.btn-bookmark:active::before, .btn-cart:active::before {
+  opacity: 0.5;
+}
+
+.btn:active {
+  opacity: 0.6;
+}
+/* Почему на иконку карзины при нажатии не работает свойство, хотя на соседние элементы (закладки и оформление заказа) работает правильно? */
+
+.order {
+  background-color: #63a63e;
+}
+
+.order:hover {
+  background: #5fbb2d;
+}
+
+.btn-order .order:active {
+  background: #518534;
+  opacity: 0.51;
+}
+
+/* contacts-user  */
+
+.contacts-user {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 940px;
+  margin: auto;
+  margin-bottom: 25px;
+}
+
+.caption {
+  width: 200px;
+  color: #ee3643;
+  font-style: italic;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 23px;
+  margin: 5px 50px;
+}
+
+.contacts {
+  width: 270px;
+  margin: 5px;
+  margin-left: 20px;
+  margin-right: 50px;
+}
+
+.phone-number{
+  position: relative;
+  color: #ee3643;
+  border: 3px solid #ffffff;
+  width: 182px;
+  padding: 10px;
+  padding-left: 72px;
+  font-size: 21px;
+  line-height: 18px;
+  font-weight: bolder;
+}
+
+.phone-number::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform:translate(-50%, -50%);
+  background-image: url("../img/sprite.png");
+  background-repeat: no-repeat;
+  width: 19px;
+  height: 19px;
+  background-position: -10px -541px;
+  opacity: 1;
+}
+
+.adress {
+  text-align: center;
+  vertical-align: top;
+  font-size: 14px;
+  line-height: 24px;
+  margin-top: 2px;
+}
+
+/* user-block */
+/* Та же проблема, что и в "Поиске", нет ощущения единости и стойкое присутствие ощущения, что накосячила... Вот только в чем именно и как этому помочь - не пойму... */
+
+.user-block {
+  width: 120px;
+  height: 45px;
+  background: #ffffff;
+  text-align: center;
+  margin: 5px;
+  margin-left: 20px;
+  margin-right: 5px;
+}
+
+.first-user-block {
+  width: 150px;
+  height: 45px;
+  background: #ffffff;
+  margin: 5px;
+  margin-right: 0px;
+  text-align: center;
+}
+
+.user-block a, .first-user-block a {
+  display: block;
+  text-decoration: none;
+  font-size: 21px;
+  line-height: 18px;
+  vertical-align: top;
+  padding: 14px 10px;
+  color: #000000;
+}
+
+.user-block a {
+  padding-left: 30px;
+}
+
+.user-block {
+  position: relative;
+}
+
+.user-block::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform:translate(-50%, -50%);
+  background-image: url("../img/sprite.png");
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 17px;
+  background-position: -10px -430px;
+  opacity: 1;
+}
+
+.user-block a:hover, .first-user-block a:hover {
+  color: #ee3643;
+}
+
+.user-block a:active, .first-user-block a:active {
+  color: #b2b2b2;
+}
+
+.user-block:hover::before {
+  width: 20px;
+  height: 17px;
+  background-position: -10px -393px;
+  opacity: 1;
+}
+
+.user-block:active::before {
+  width: 20px;
+  height: 17px;
+  background-position: -10px -430px;
+  opacity: 1;
+}
+
+/* main-navigation */
+
+.list-main-navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: #ffffff;
+  background: #32425c;
+  box-shadow: 0 5px #293449;
+  width: 900px;
+  margin: auto;
+  text-transform: none;
+  list-style: none;
+  font-size: 0;
+  padding: 0 20px;
+}
+
+.item-main-navigation{
+  height: 55px;
+  font-size: 17px;
+  line-height: 17px;
+  vertical-align: top;
+}
+
+.main-navigation a{
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 22px 31px;
+}
+
+.main-navigation a:hover {
+  background-color: #293449;
+  padding-bottom: 21px;
+}
+
+.main-navigation a:active {
+  background-color: #1d2739;
+  color: rgba(255,255,255,0.5);
+  padding-bottom: 21px;
+}
+
+/* index тело станицы*/
+/* container */
+
+.container {
+  display: flex;
+  flex-wrap: wrap; 
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  margin-top: 7px;
+}
+
+.section-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 940px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+/*.features*/
+
+.features {
+  justify-content: space-between;
+  align-self: flex-start;
+  color: #ffffff;
+  margin-top: 50px;
+}
+
+.features a {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  color: #ffffff;
+  text-decoration: none; 
+  width: 135px;
+  padding: 12px 0px;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: uppercase;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+.features a:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.features a:active {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+.features-item {
+  position: relative;
+  width: 300px;
+  height: 123px;
+  margin-bottom: 20px;
+  background: red;
+}
+
+.features-item:last-child {
+  margin-bottom: 0px;
+}
+
+.features h3 {
+  display: block;
+  width: 120px;
+  padding-left: 20px;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.new-flag {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.icon-features {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 109px;
+  height: 92px;
+  padding-top: 31px;
+  padding-left: 31px;
+}
+
+.materials .icon-features img {
+ margin-left: 20px;
+}
+
+.tool .icon-features img {
+ margin-left: 8px;
+}
+
+.materials {
+  background: #f6b22d;
+}
+
+.tool {
+  background: #4aafde;
+}
+
+.equipment {
+  background: #cc79d1;
+}
+
+.discounts {
+  background: #85d179;
+}
+
+.delivery {
+  background: #f6b22d;
+}
+
+.slider {
+  position: relative;
+  width: 620px;
+  height: 266px;
+  background: #000000 ;
+}
+
+.slider-name {
+  position: absolute;
+  display: block;
+  padding-left: 25px;
+  margin-top: 25px;
+  font-size: 36px;
+  line-height: 30px;
+  text-align: left;
+  vertical-align: top;
+  text-transform: uppercase;
+}
+
+.slider p {
+  position: absolute;
+  display: block;
+  padding-left: 25px;
+  margin-top: 60px;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: left;
+  vertical-align: top;
+  font-family: "PT Sans", sans-serif;
+  font-weight: normal;
+}
+
+.open-directory a {
+  position: absolute;
+  left: 25px;
+  bottom: 22px;
+  color: #ffffff;
+  text-decoration: none; 
+  width: 195px;
+  height: 20px;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: uppercase;
+  background: #ee3643;
+  border-radius: 3px;
+}
+
+.open-directory a:hover {
+  background: #ca2c37;
+}
+
+
+.open-directory a:active {
+  background: #ba2732;
+}
+
+
+.features-item-after-the-slider {
+  display: flex; 
+  flex-direction: column;
+}
+
+/*.goods*/
+
+.popular-goods {
+  display: flex;
+  justify-content: space-between;
+  width: 940px;
+  background: #f7f3ec;
+  margin-bottom: 20px;
+}
+
+.goods h2 {
+  padding-left: 30px;
+  margin-top: 25px;
+  font-size: 30px;
+  line-height: 30px;
+  text-align: left;
+  vertical-align: top;
+  text-transform: uppercase;
+  color: #32425c;
+}
+
+.popular-goods-link {
+  text-align: center;
+  vertical-align: top;
+  width: 255px;
+  height: 40px;
+  margin: 25px;
+}
+
+.popular-goods-link a {
+  display: block;
+  text-decoration: none; 
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  vertical-align: top;
+  text-transform: uppercase;
+  background: #ee3643;
+  border-radius: 2px;
+  padding: 11px;
+  color: #ffffff;
+}
+
+.goods-list {
+  display: flex;
+  justify-content: space-between;
+  width: 940px;
+}
+
+
+/*.manufacturers*/
+
+.manufacturers {
+ 
+}
+
+.popular-manufacturers {
+  display: flex;
+  justify-content: space-between;
+  width: 940px;
+  background: #f7f3ec;
+  margin-bottom: 20px;
+}
+
+.manufacturers h2 {
+  padding-left: 30px;
+  margin-top: 25px;
+  font-size: 30px;
+  line-height: 30px;
+  text-align: left;
+  vertical-align: top;
+  text-transform: uppercase;
+  color: #32425c;
+}
+
+.popular-manufacturers-link {
+  text-align: center;
+  vertical-align: top;
+  width: 255px;
+  height: 40px;
+  margin: 25px;
+}
+
+.popular-manufacturers-link a {
+  display: block;
+  text-decoration: none; 
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  vertical-align: top;
+  text-transform: uppercase;
+  background: #ee3643;
+  border-radius: 2px;
+  padding: 11px;
+  color: #ffffff;
+}
+
+.manufacturers-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.manufacturers-list-item {
+ width: 220px;
+ height: 145px;
+ margin-bottom: 20px;
+}
+
+.manufacturers-list-item:hover {
+ box-shadow: 0 5px 20px 0 #a9adb5;
+}
+
+.manufacturers-list-item:active {
+ box-shadow: 0 5px 10px 0 #adb1b9;
+ opacity: 0.3;
+}
+
+/*.services*/
+/* Не работает переключатель, хотя кажется все как-будто правильно должно быть... по той же схеме делала на  inner переключатели в фильтре, там все работает... Явно здесь я что-то сделала не то, но что именно? */
+
+.servis-content {
+  width: 100%;
+  background: #f2f6f8;
+  margin-bottom: 80px;
+}
+
+.services {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.services-slogan {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin-top: 65px; 
+  margin-bottom: 70px;
+}
+
+.about-services {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.paper-btn-selector {
+  position: relative;
+  width: 240px;
+  padding-bottom: 100px;
+  
+}
+
+.vertical-shadow {
+  position: absolute;
+  left: 240px;
+  top: -45px
+}
+
+.paper-btn input {
+    display: none
+}
+
+.paper-btn label {
+  display: inline-block;
+  width: 210px;
+  line-height: 30px;
+  font-size: 21px;
+  color: #ffffff;
+  background-color: #32425c;
+  cursor: pointer;
+  box-shadow:
+    0 1px 0 0 #405069 inset,
+    0 -1px 0 0 #293449 inset;
+  padding: 16px 20px;
+}
+
+.paper-btn label:hover {
+  background-color: #293449;
+}
+
+.paper-btn #yes-delivery:checked ~ label[for="yes-delivery"],
+.paper-btn #yes-guarantee:checked ~ label[for="yes-guarantee"],
+.paper-btn #yes-credit:checked ~ label[for="yes-credit"] { 
+  color:#32425c;
+  background-color: #ffffff;
+  box-shadow:
+    0 0 0 0 #405069 inset,
+    0 0 0 0 #293449 inset; 
+}
+
+.services-content-slogan {
+  display: none;
+  width: 620px;
+  height: 282px;
+  margin-left: 80px;
+}
+
+#yes-delivery:checked ~ .services-slider-slogan .services-content-slogan:nth-child(1) {
+  display: block;
+}
+
+#yes-guarantee:checked ~ .services-slider-slogan .services-content-slogan:nth-child(2) {
+  display: block;
+}
+
+#yes-credit:checked ~ .services-slider-slogan .services-content-slogan:nth-child(3) {
+  display: block;
+}
+
+.services-content-slogan:nth-child(1) {
+  background: url("../img/truck.png") no-repeat;
+  background-position: right bottom;
+}
+
+.services-content-slogan:nth-child(2) {
+  background: url("../img/guarantee.png") no-repeat;
+  background-position: right bottom;
+}
+
+.services-content-slogan:nth-child(3) {
+  background: url("../img/credit.png") no-repeat;
+  background-position: right bottom;
+}
+
+.delivery-slogan {
+  width: 268px;
+}
+
+.guarantee-slogan {
+  width: 370px;
+}
+
+.services h2 {
+  font-size: 30px;
+  line-height: 32px;
+  text-align: left;
+  vertical-align: top;
+  text-transform: uppercase;
+  margin-top: 0px;
+}
+
+.services .services-content-slogan h2 {
+  font-size: 34px;
+  line-height: 32px;
+  color: #32425c;
+}
+
+.services p {
+  font-size: 14px;
+  line-height: 24px;
+  text-align: left;
+  vertical-align: top;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.btn-send-a-request {
+  width: 170px;
+  height: 20px;
+  display: block;
+  text-decoration: none; 
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  vertical-align: top;
+  text-transform: uppercase;
+  background: #ee3643;
+  border-radius: 2px;
+  padding: 10px;
+  color: #ffffff;
+  margin-top: 30px;
+}
+
+/*.technomart-company*/
+
+.technomart-company {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 82px;
+}
+
+.about-technomart-company {
+  width: 520px;
+  margin-right: 50px;
+}
+
+.technomart-contacts {
+  position: relative;
+  width: 300px;
+}
+
+.technomart-company h2 {
+  font-size: 30px;
+  line-height: 24px;
+  text-align: left;
+  vertical-align: top;
+  text-transform: uppercase;
+  margin-top: 0px;
+  margin-bottom: 32px;
+}
+
+.technomart-company p {
+  font-size: 14px;
+  line-height: 24px;
+  text-align: left;
+  vertical-align: top;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.container-btn-map {
+  width: 300px;
+  height: 158px;
+  margin: 30px 0px 40px;
+}
+
+.btn-company-link {
+  text-align: center;
+  vertical-align: top;
+  width: 220px;
+  height: 40px;
+}
+
+.btn-company-link a {
+  display: block;
+  text-decoration: none; 
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  vertical-align: top;
+  text-transform: uppercase;
+  background: #ee3643;
+  border-radius: 2px;
+  padding: 11px;
+  color: #ffffff;
+}
+
+.btn-mail-link {
+  text-align: center;
+  vertical-align: top;
+  width: 300px;
+  height: 40px;
+}
+
+.btn-mail-link a {
+  display: block;
+  text-decoration: none; 
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  vertical-align: top;
+  text-transform: uppercase;
+  background: #ee3643;
+  border-radius: 2px;
+  padding: 11px;
+  color: #ffffff;
+}
+
+.about-technomart-company ul {
+  font-size: 17px;
+  line-height: 39px;
+  font-weight: bold;
+  padding: 0px;
+  padding-left: 35px;
+  margin: 0px;
+  margin-top: -10px;
+  margin-bottom: 30px;
+}
+
+.transport-company {
+  position: relative;
+}
+
+.transport-company:before {
+  position: absolute;
+  content: "";
+  border-top: 2px solid #fb565a;
+  width: 25px;
+  top: 20px;
+  left: -35px;
+}
+
+/* Всплывающая карта */
+/* Всплывающая карта так и не завершена, скрипты не прописаны.
+   Не разобралась с нюансами, как лучше и правильнее делать и  в каком случае. Говорят, что в основном надо вставлять интерактивную  (яндекс, гугл), но хочется понять суть способов.
+*/
+
+.modal-content-map {
+  display: none;
+  position: absolute;
+  top: -13%;
+  left: -213%;
+  z-index: 20;
+  width: 940px;
+  height: 446px;
+  margin-top: 0px;
+  margin-left: 0px;
+  background: url("../img/big-map.png");
+  box-shadow: 0 0px 15px 5px #c4c3c4;
+}
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.0);
+}
+
+/* Всплывающая форма */
+
+.modal-content-mail {
+  display: none;
+  position: absolute;
+  top: 125px;
+  left: -44%;
+  width: 460px;
+  margin-left: -350px;
+  padding: 45px 80px 40px 80px;
+  color: #000000;
+  background: #ffffff;
+  background-position: 30px;
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.7),
+    0 -113px 0px #f1f1f1 inset;
+  border-top: 7px solid #ee3643;
+}
+
+.modal-content-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 28px;
+  height: 25px;
+  font-size: 0;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+.modal-content-close::before,
+.modal-content-close::after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 5px;
+  width: 27px;
+  height: 5px;
+  background-color: #ee3643;
+  border-radius: 1px;
+}
+
+.modal-content-close::before {
+  transform: rotate(45deg);
+}
+
+.modal-content-close::after {
+  transform: rotate(-45deg);
+}
+
+.modal-content .mail-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.mail-form input[type="text"],
+.mail-form input[type="password"],
+.mail-form textarea{
+  width: 186px;
+  margin-bottom: 15px;
+  padding: 5px 15px;
+  font-size: 14px;
+  line-height: 24px;
+  font-family: "PT Sans", sans-serif;
+  color: #000000;
+  border: 2px solid #d7dcde;
+  border-radius: 3px;
+  outline: none;
+  margin-top: 10px;
+}
+
+.mail-form textarea{
+  width: 426px;
+}
+
+.mail-form label {
+  display: inline-block;
+  width: 220px;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: bold;
+  font-family: "PT Sans", sans-serif;
+  margin-bottom: 5px;
+  
+}
+
+.mail-form label:nth-child(3) {
+  width: 460px;
+  margin-bottom: 33px;
+}
+
+.mail-form .btn {
+  width: 100%;
+  margin-top: 25px;
+  background-color: #ee3643;
+  border: 0px solid #000000;
+  border-radius: 3px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: "PT Sans", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  padding: 10px;
+}
+
+.modal-content-show {
+  display: block;
+  animation: bounce 0.6s;
+}
+
+@keyframes bounce {
+  0%   {
+    transform: translateY(-2000px);
+  }
+  70%  {
+    transform: translateY(30px);
+  }
+  90%  {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.modal-error {
+  animation: shake 0.6s;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px);
+  }
+}
+
+/*
+
+footer
+
+*/
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap; 
+  flex-direction: column;
+  justify-content: center;
+  color: #ffffff;
+  background: #293449;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.logo-navigation {
+  background: #32425c;
+}
+
+.social-copyright {
+  background: #293449;
+}
+
+.logo-navigation-content {
+  display: flex;
+  flex-direction: row;
+  width: 940px;
+  margin: auto;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.index-logo-adress {
+  display: flex;
+  flex-direction: column;
+}
+
+footer .index-logo {
+  width: 220px;
+  background-color:#ee3643;
+  box-shadow: 0 5px #b52933;
+  font-size: 30px;
+  line-height: 30px;
+  text-align: center;
+  vertical-align: top;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+footer .index-logo a {  
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 30px;
+  line-height: 30px;
+  vertical-align: middle;
+  padding: 17px;
+}
+
+.footer-navigations {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-navigation ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.footer-navigation ul a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-navigation ul a:hover {
+  text-decoration: underline;
+}
+
+.footer-navigation ul a:active {
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+.footer-navigation-goods ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.footer-navigation-goods ul a {
+  color: #d6b479;
+  text-decoration: none;
+}
+
+.footer-navigation-goods ul a:hover {
+  text-decoration: underline;
+}
+
+.footer-navigation-goods ul a:active {
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+.footer-navigation ul li{
+  margin-right: 60px;
+  margin-top: 20px;
+}
+
+.footer-navigation-goods ul li{
+ margin-right: 60px;
+}
+
+.footer-navigation ul li:last-child {
+ margin-right: 0px;
+}
+
+.footer-navigation-goods ul li:last-child {
+ margin-right: 0px;
+}
+
+li {
+ list-style-type: none; /* Убираем маркеры на всем макете. В данном случае мне было удобно так сдделать но на сколько я понимаю - это плохая практика и надо было к каждому списку отдельно применять. Так? */
+}
+
+.social-copyright-content {
+  display: flex;
+  flex-direction: row;
+  width: 940px;
+  margin: auto;
+  justify-content: space-between;
+  font-size: 16px;
+  line-height: 18px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+.social-copyright-content a {
+  color: #d6b479;
+  text-decoration: none;
+}
+
+.social-copyright-content a:hover{ 
+  text-decoration: underline;
+}
+
+.social-copyright-content a:active {
+  color: #e13643;
+  text-decoration: none;
+}
+
+.footer-social {
+  margin: 0px 10px;
+  text-align: center;
+}
+
+.copyright {
+  display: inline-block;
+  width: 230px;
+  margin: 0px;
+}
+
+.mail p, .author-copyright p {
+  margin: 0px;
+}
+
+.social-btn {
+  display: inline-block;
+  position: relative;
+  width: 42px;
+  height: 42px;
+  margin: 0 2px;
+  font-size: 0; /*  скрывает текст */
+  vertical-align: top;
+  text-decoration: none;
+  border-radius: 50%;
+  background-color: #212a3a;
+}
+
+.social-btn:hover, .social-btn:active {
+  background-color: #ee3643;
+} 
+
+.social-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%);
+  background-image: url("../img/sprite.png");
+  background-repeat: no-repeat;
+}
+
+.social-btn-vk::before {
+  width: 20px;
+  height: 12px;
+  background-position: -10px -790px;
+}
+
+.social-btn-fb::before {
+  width: 10px;
+  height: 18px;
+  background-position: -10px -258px;
+}
+
+.social-btn-inst::before {
+  width: 17px;
+  height: 17px;
+  background-position: -10px -296px;;
+}
+
+/*
+
+
+inner
+
+
+*/
+
+/* .privat-user-block */
+/* должны ли иконки одновременно реагировати на курсор? Прошу обратить внимание на этот момент. Правильно ли он осуществлен? */
+
+.privat-user-block {
+  width: 300px;
+}
+
+.user-name {
+  position: relative;
+  width: 300px;
+  background-color: #ffffff;
+  margin-top: 5px;
+}
+
+.user-name::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 9%;
+  transform:translate(-50%, -50%);
+  background-image: url("../img/sprite.png");
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 18px;
+  background-position: -10px -752px;
+  opacity: 1;
+}
+
+.user-name:active {
+  color: #b2b2b2;
+}
+
+.user-name:hover::before {
+  width: 20px;
+  height: 18px;
+  background-position: -10px -714px;
+  opacity: 1;
+}
+
+.user-name:active::before {
+  width: 20px;
+  height: 18px;
+  background-position: -10px -752px;
+  opacity: 1;
+}
+
+.user-name a {
+  position: absolute;
+  width: 45px;
+  height: 44px;
+  cursor:pointer;
+  right: 0px;
+  background-color: inherit;
+  border: none;
+}
+
+.user-name a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("../img/sprite.png");
+  background-repeat: no-repeat;
+  width: 21px;
+  height: 17px;
+  background-position: -10px -504px;
+  opacity: 1;
+}
+
+.user-name a:hover::before {
+  width: 21px;
+  height: 17px;
+  background-position: -10px -467px;
+}
+
+.user-name a:active::before {
+  width: 21px;
+  height: 17px;
+  background-position: -10px -504px;
+}
+
+.user-name b {
+  display: inline-block;
+  font-size: 21px;
+  line-height: 18px;
+  padding-left: 50px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+
+.orders-cabinet {
+  font-size: 16px;
+  line-height: 18px;
+  padding-top: 5px;
+  padding-left: 22px;
+  color: #32425c;
+  margin: 0px;
+}
+
+.orders-cabinet a {
+  color: #32425c;
+}
+
+.orders-cabinet a:hover {
+  color: #ee4d59;
+}
+
+.orders-cabinet a:active {
+  color: #bec5ce;
+}
+
+
+.orders-cabinet li {
+  display: inline-block;
+}
+
+.orders-cabinet li:first-child::after {
+  content: "•";
+  font-weight: bolder;
+  margin-left: 12px;
+  margin-right: 17px;
+  text-decoration: none;
+}
+
+/*.breadcrumbs*/
+
+.breadcrumbs ul{
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  width: 940px;
+  margin: auto;
+  padding: 0px;
+}
+
+.breadcrumbs ul li {
+  margin: 17px 20px;
+  text-align: center;
+  vertical-align: top;
+  font-size: 13px;
+  line-height: 18px;
+  font-family: "PT Sans";
+}
+
+.breadcrumbs ul li:first-child {
+  margin-left: 0px;
+}
+
+.breadcrumbs ul li:nth-child(1)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 32px;
+  transform:translate(-50%, -50%);
+  background-image: url("../img/sprite.breadcrumbs.png");
+  background-repeat: no-repeat;
+  width: 8px;
+  height: 12px;
+  background-position: -10px -42px;
+  opacity: 1;
+}
+
+.breadcrumbs ul li:nth-child(2)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 127px;
+  transform:translate(-50%, -50%);
+  background-image: url("../img/sprite.breadcrumbs.png");
+  background-repeat: no-repeat;
+  width: 8px;
+  height: 12px;
+  background-position: -10px -42px;
+  opacity: 1;
+}
+
+.breadcrumbs ul li:nth-child(3)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 247px;
+  transform:translate(-50%, -50%);
+  background-image: url("../img/sprite.breadcrumbs.png");
+  background-repeat: no-repeat;
+  width: 8px;
+  height: 12px;
+  background-position: -10px -42px;
+  opacity: 1;
+}
+
+.breadcrumbs ul li a{
+  color: #000000;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.page-heading {
+  background: #f2f6f8;
+  width: 940px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.page-heading h2{
+  padding-left: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color : #32425c;
+  font-size: 30px;
+  line-height: 30px;
+  text-align: left;
+  vertical-align: top;
+  text-transform: uppercase;
+}
+
+/* .inner-main-content */
+
+.inner-main-content {
+  display: flex;
+  flex-direction: row;
+  width: 940px;
+  margin: auto;
+}
+
+/* .filter */
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  margin-right: 20px;
+}
+
+.filter b {
+  display: inline-block;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: left;
+  vertical-align: top;
+  text-transform: uppercase;
+  font-family: "PT Sans", sans-serif;
+  padding: 10px 20px;
+  background-color: #f7f3ec;
+  font-weight: normal;
+  margin-bottom: 8px;
+}
+
+.filter  h3{
+  font-size: 17px;
+  line-height: 30px;
+  text-align: left;
+  vertical-align: top;
+  text-transform: uppercase;
+  font-family: "PT Sans", sans-serif;
+  padding: 0px;
+  margin: 3px 0px;
+}
+
+.line-manufacturer-item {
+  border-bottom: 1px solid #f7f3ec;
+  margin-top: 25px;
+  margin-bottom: 17px;
+}
+
+.line-еnergy {
+  border-bottom: 1px solid #f7f3ec;
+  margin-top: 12px;
+  margin-bottom: 17px
+}
+
+/* range-filter */
+
+.range-filter {
+  width: 220px;
+  margin-top: 13px;
+}
+
+.range-controls {
+  position: relative;
+  height: 41px;
+  padding-top: 39px;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  border-radius: 0px 0px 4px 4px;
+  background: #f7f3ec;
+}
+
+.range-controls .scale {
+  height: 2px;
+  background: #d7dcde;
+}
+
+.range-controls .bar {
+  width: 84%;
+  height: 2px;
+  background: #00ca74;
+  margin-left: 0%;
+}
+
+.range-controls .toggle {
+  position: absolute;
+  top: 30px;
+  left: 0px;
+  width: 4px;
+  height: 4px;
+  cursor: pointer;
+  border: 8px solid #ffffff;
+  border-radius: 50%;
+  background: #ababab;
+  box-shadow: 0 2px 1px 0 #cfcfcf;
+}
+
+.range-controls .toggle-min {
+  left: 20px;
+}
+
+.range-controls .toggle-max {
+  left: 160px;
+}
+
+.price-controls {
+  font-size: 0;
+}
+
+.price-controls label {
+  font-size: 17px;
+  display: inline-block;
+}
+
+.min-price {
+  text-align: left;
+}
+
+.price-controls input {
+  font-family: "PT Sans", sans-serif;
+  font-size: 17px;
+  width: 74px;
+  padding: 8px 10px;
+  text-align: center;
+  color: #000000;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  background:#f7f3ec;
+}
+
+.min-price input {
+  margin-right: 10px;
+}
+
+.max-price input {
+  margin-left: 10px;
+}
+
+/*.manufacturer-item, .еnergy */
+
+.manufacturer-item, .еnergy {
+  display: flex;
+  flex-direction: column;
+  font-family: "PT Sans", sans-serif;
+  vertical-align: top;
+  text-align: left;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.manufacturer-item input + label, .еnergy input + label {
+  position: relative;
+  padding: 10px;
+  padding-left: 35px;
+  cursor: pointer;
+}
+
+.manufacturer-item input[type="checkbox"], .еnergy input[type="radio"] {
+  display: none;
+}
+
+.manufacturer-item input[type="checkbox"] + label::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform:translate(-50%, -50%);
+  background-image: url("../img/sprite.png");
+  background-repeat: no-repeat;
+  width: 23px;
+  height: 23px;
+  background-position: -10px -82px;
+  opacity: 1;
+}
+
+ .manufacturer-item input[type="checkbox"]:checked + label::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 6%;
+  transform:translate(-50%, -50%);
+  background-image: url("../img/sprite.png");
+  background-repeat: no-repeat;
+  width: 27px;
+  height: 23px;
+  background-position: -10px -125px;
+  opacity: 1;
+}
+
+.еnergy input[type="radio"] + label::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform:translate(-50%, -50%);
+  background-image: url("../img/sprite.png");
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+  background-position: -10px -168px;
+  opacity: 1;
+} 
+
+.еnergy input[type="radio"]:checked + label::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform:translate(-50%, -50%);
+  background-image: url("../img/sprite.png");
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+  background-position: -10px -213px;
+  opacity: 1;
+}
+
+.btn-filter input {
+  color: #000000;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 10px 40px;
+  border: 1px solid #e5e5e5;
+  border-radius: 2px;
+  font-size: 13px;
+  line-height: 18px;
+  font-family: "PT Sans", sans-serif;
+  background-color: #ffffff;
+  margin-top: 69px;
+}
+
+/* .sorting */
+
+.sorting {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+}
+
+/* .sorting-tool */
+
+.sorting-tool {
+  display: flex;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: left;
+  vertical-align: top;
+  text-transform: uppercase;
+  font-family: "PT Sans", sans-serif;
+  padding: 10px 0px 5px 20px;
+  background-color: #f7f3ec;
+  margin-bottom: 20px;
+}
+
+.sorting-tool b {
+  margin-right: 140px;
+  font-weight: normal;
+}
+
+.sorting-tool .price { 
+  margin-right: 66px;
+}
+
+.sorting-tool .type {
+  margin-right: 62px;
+}
+
+.sorting-tool .functional {
+  margin-right: 47px;
+}
+
+.sorting-item input {
+  display: none;
+}
+
+.sorting-item label {
+  cursor:pointer;
+  color: #b2b2b2;
+  border-bottom: 1px dotted #ee3643;
+}
+
+.sorting-item label:hover {
+  color: #000000;
+  border-bottom: 1px solid #ee3643;
+}
+
+.sorting-item input:checked ~ label {
+  color: #ee3643;
+  border-bottom: 0px;
+}
+/* не срабатывает нажатие, не изменяется цвет, ну я же не чекбокс использую... А судя по всему тут именно он и нужен? Надо переделать! */
+
+/* .arrow */
+
+.arrow{
+  display: none;
+}
+
+.arrow + label {
+  display: inline-block;
+  font-size: 0;
+  margin-top: 3px;
+  cursor:pointer;
+}
+
+.arrow-up + label {
+  margin-right: 18px;
+}
+
+.arrow + label::before {
+  content: "";
+  display: inline-block;
+  border: 10px solid #c6c2bd;
+  border-right-width: 5px;
+  border-left-width: 5px;
+  border-right-color: transparent;
+  border-left-color: transparent;
+}
+
+.arrow-up + label::before {
+  border-top-width: 0;
+}
+
+.arrow-down + label::before {
+  border-bottom-width: 0;
+}
+
+.arrow:checked + label::before {
+  border-top-color: #ee3643;
+  border-bottom-color: #ee3643;
+}
+
+.arrow + label:hover::before {
+  border-top-color: #272727;
+  border-bottom-color: #272727;
+}
+
+/* .sorting-goods-list */
+
+.sorting-goods-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* .goods-items */
+
+.goods-item {
+  font-weight: 600;
+  position: relative;
+  width: 220px;
+  text-align: center;
+  border: 1px solid #e5e5e5;
+  margin-bottom: 20px;
+}
+
+.goods-item:hover {
+  box-shadow: 0 5px 20px 0 #a9adb5;
+}
+
+.new:before {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  z-index: 10;
+  width: 60px;
+  height: 60px;
+  content: "";
+  background: url("img/new-flag.png") no-repeat 0 0;
+}
+
+.goods-item .actions {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 88px;
+  padding: 40px 0;
+  background-color: #ffffff; 
+}
+
+.actions .buy,
+.actions .bookmark {
+  font-family: "Cuprum", "PT Sans", sans-serif;
+  font-size: 14px;
+  display: block;
+  width: 135px;
+  margin: 0 auto 7px;
+  padding: 10px 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ffffff;
+  border-radius: 3px;
+}
+
+.actions .buy {
+  background-color: #63a63e;
+  box-shadow: inset 0 -3px 0 #367315;
+  position: relative;
+}
+
+.actions .buy:hover {
+  background-color: #5fbb2d;
+  box-shadow: inset 0 -3px 0 #367315;
+}
+
+.actions .buy:active {
+  background-color: #518534;
+  box-shadow: inset 0 -3px 0 #518534;
+}
+
+.actions .buy::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  transform:translate(-50%, -50%);
+  background-image: url("../img/sprite.png");
+  background-repeat: no-repeat;
+  width: 17px;
+  height: 16px;
+  background-position: -10px -10px;
+  opacity: 0.3;
+}
+
+.actions .buy:hover::before, .btn-cart:hover::before {
+  opacity: 1;
+}
+
+.actions .buy:active::before, .btn-cart:hover::before {
+  opacity: 1;
+}
+
+.actions .bookmark {
+  width: 129px;
+  padding: 7px 0;
+  color: #32425c;
+  border: 3px solid #63a63e;
+  background-color: #ffffff;
+}
+
+.actions .bookmark:hover {
+  border: 3px solid #32425c;
+}
+
+.actions .bookmark:active {
+  opacity: 0.3; 
+}
+
+.goods-item .actions {
+  display: none;
+}
+
+.goods-item:hover .actions {
+  display: block;
+}
+
+.catalog-item-image {
+  width: 220px;
+  height: 169px;
+  overflow: hidden;
+}
+
+.goods-item-image img {
+  max-width: 100%;
+}
+
+.goods-item .title-goods {
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding: 0 25px;
+}
+
+.goods-item .price-before {
+  min-height: 20px;
+  margin-bottom: 10px;
+  text-decoration: line-through;
+  color: #999999;
+  font-size: 17px;
+}
+
+.goods-item .price-after {
+  position: relative;
+  width: 80px;
+  margin: 0 auto 20px;
+  padding: 10px 30px;
+  color: #ffffff;
+  border-radius: 3px;
+  background: #ee3643;
+  font-size: 17px;
+  line-height: 18px;
+}
+
+.goods-item .price-after:after {
+  position: absolute;
+  top: 0px;
+  right: -20px;
+  width: 0;
+  height: 0;
+  content: "";
+  border: 19px solid #ffffff;
+  border-left-color: #ee3643;
+}
+
+/* попап добавления в корзину */
+
+/*
+Не понятно, как лучше позиционировать относительно вьюпорта. К какому блоку привязывать? Ведь на главной (index) тоже есть блочки с товарами, они же тоже должны "срабатывать". Как сделать так, чтобы клик по товару отражался к корзине? JS? или это уже лишнее? (или я не так поняла ТЗ) 
+*/
+
+.modal-content-basket{
+  display: none;
+  position: absolute;
+  top: 300px;
+  left: -20%;
+  width: 460px;
+  margin-left: 350px;
+  padding: 45px 80px 40px 80px;
+  color: #000000;
+  background: #ffffff;
+  background-position: 30px;
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.7),
+    0 -113px 0px #f1f1f1 inset;
+  border-top: 7px solid #ee3643;
+}
+
+
+.modal-content-basket p {
+  margin: 25px;
+  margin-bottom: 90px;
+  margin-left: 100px;
+  font-size: 30px;
+  line-height: 30px;
+  text-align: left;
+  vertical-align: top;
+  color: #32425c;
+}
+
+.modal-content-basket a {
+  display: inline-block;
+  text-decoration: none; 
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  vertical-align: top;
+  text-transform: uppercase;
+  background: #ee3643;
+  border-radius: 2px;
+  padding: 11px;
+  color: #ffffff;
+  text-align: center;
+  vertical-align: top;
+  width: 196px;
+  height: 20px;
+  margin: px;
+}
+
+.modal-content-basket a:hover,
+.modal-content a:active {
+  color: #000000;
+  background-color: #ffffff;
+  font-weight: bolder;
+}
+
+.modal-content-basket a:last-child {
+  float:right;
+}
+
+.modal-content-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 28px;
+  height: 25px;
+  font-size: 0;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+.check {
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-color: #63a63e;
+}
+
+.check::before,
+.check::after {
+  content: "";
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 1px;
+}
+
+.check::before {
+  transform: rotate(45deg);
+  top: 37px;
+  left: 13px;
+  width: 20px;
+  height: 7px;
+}
+
+.check::after {
+  transform: rotate(-45deg);
+  top: 33px;
+  left: 21px;
+  width: 36px;
+  height: 7px;
+}
+
+
+/* .pages */
+/* Индикатор активности (находимся на этой странице) не сделан: какой селектор в этом случае правильно использовать? */
+
+.switch-pages {
+  width: 100%;
+  padding-top: 62px;
+  padding-bottom: 70px;
+  
+}
+
+.pages {
+  width: 940px;
+  margin: auto;
+}
+
+.page {
+}
+
+.pages a {
+  color: #000000;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  border: 1px solid #e5e5e5;
+  border-radius: 2px;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.pages a:first-child {
+  margin-left: 240px;
+}
+
+.pages a:last-child {
+  padding: 10px 30px;
+}
+
+.pages a:hover {
+ border: 1px solid #bdc6ca;
+}
+
+.pages a:active {
+  border: 1px solid #ee3643;
+}
+
+ /* .on-product-pages */
+
+.on-product-pages {
+  width: 100%;
+  background: #f2f6f8;
+  padding-top: 45px;
+  padding-bottom: 65px;
+}
+
+.on-product {
+  width: 940px;
+  margin: auto;
+}
+
+.on-product h2{
+  font-size: 30px;
+  line-height: 30px;
+  text-align: left;
+  vertical-align: top;
+  text-transform: uppercase;
+}
+
+.on-product p {
+  font-size: 14px;
+  line-height: 24px;
+  text-align: left;
+  vertical-align: top;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+  /*
+
+
+*/
+
+
+
+
+
+
+/* .sprite */
+
+.sprite {
+    background-image: url(../img/sprite.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.sprite-icon-basket {
+    width: 17px;
+    height: 16px;
+    background-position: -10px -10px;
+}
+
+.sprite-icon-bookmark {
+    width: 14px;
+    height: 16px;
+    background-position: -10px -46px;
+}
+
+.sprite-icon-check-off {
+    width: 23px;
+    height: 23px;
+    background-position: -10px -82px;
+}
+
+.sprite-icon-check-on {
+    width: 27px;
+    height: 23px;
+    background-position: -10px -125px;
+}
+
+.sprite-icon-circle {
+    width: 25px;
+    height: 25px;
+    background-position: -10px -168px;
+}
+
+.sprite-icon-circle-dot {
+    width: 25px;
+    height: 25px;
+    background-position: -10px -213px;
+}
+
+.sprite-icon-facebook {
+    width: 10px;
+    height: 18px;
+    background-position: -10px -258px;
+}
+
+.sprite-icon-instagramm {
+    width: 17px;
+    height: 17px;
+    background-position: -10px -296px;
+}
+
+.sprite-icon-left {
+    width: 22px;
+    height: 40px;
+    background-position: -10px -333px;
+}
+
+.sprite-icon-login {
+    width: 20px;
+    height: 17px;
+    background-position: -10px -393px;
+}
+
+.sprite-icon-login-gray {
+    width: 20px;
+    height: 17px;
+    background-position: -10px -430px;
+}
+
+.sprite-icon-logout {
+    width: 21px;
+    height: 17px;
+    background-position: -10px -467px;
+}
+
+.sprite-icon-logout-gray {
+    width: 21px;
+    height: 17px;
+    background-position: -10px -504px;
+}
+
+.sprite-icon-phone {
+    width: 19px;
+    height: 19px;
+    background-position: -10px -541px;
+}
+
+.sprite-icon-right {
+    width: 22px;
+    height: 40px;
+    background-position: -10px -580px;
+}
+
+.sprite-icon-search {
+    width: 17px;
+    height: 17px;
+    background-position: -10px -640px;
+}
+
+.sprite-icon-search-red {
+    width: 17px;
+    height: 17px;
+    background-position: -10px -677px;
+}
+
+.sprite-icon-user {
+    width: 20px;
+    height: 18px;
+    background-position: -10px -714px;
+}
+
+.sprite-icon-user-gray {
+    width: 20px;
+    height: 18px;
+    background-position: -10px -752px;
+}
+
+.sprite-icon-vk {
+    width: 20px;
+    height: 12px;
+    background-position: -10px -790px;
+}
+
+
+.sprite {
+    background-image: url(../img/sprite.breadcrumbs.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.sprite-icon-home {
+    width: 15px;
+    height: 12px;
+    background-position: -10px -10px;
+}
+
+.sprite-icon-right-breadcrumbs {
+    width: 8px;
+    height: 12px;
+    background-position: -10px -42px;
+}
+

@@ -1,7 +1,8 @@
 # Личный проект «Техномарт»
 
-* Студент: [Олеся Штыковская](https://up.htmlacademy.ru/htmlcss/15/user/66820).
-* Наставник: `Неизвестно`.
+* Студент: [Олеся Штыковская](https://up.htmlacademy.ru/htmlcss/14/user/66820).
+* Наставник: [Евгений Карпов] 
+(https://htmlacademy.ru/profile/id70583).
 
 ---
 
