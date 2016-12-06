@@ -1,31 +1,9 @@
-/*Папка для стилевых файлов.
-Пример структуры файлов:
-css/
-| - style.css
-| - normalize.css
-| - [другие *.css файлы]
-
-font-family: "Cuprum", sans-serif;
-font-family: "PT Sans", sans-serif;
-*/
-
-/*  В какой последовательности лучше прописывать свойства?
-    # 1- позиционирование
-      2- размер
-      3- цвет/картинки и т.п.
-
-    Существуют ли общие предпочтения?
-    Допустимо ли между группами свойств оставлять пустую строку и комментарий для лучшшей читаемости? 
-
-*/
-
-
 body {
-  font-size: 12px;
+  font-size: 17px;
   line-height: 1;
-  color: black;
+  color: #000000;
   font-weight: normal;
-  font-family: "Cuprum", "PT Sans", sans-serif;
+  font-family:  "Cuprum","PT Sans", "Arial", sans-serif;
   background: #ffffff;
 }
 
@@ -45,10 +23,10 @@ h2 {
 
 .container-header {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   padding-bottom: 65px;
   background-color: #f1f5f7;
+	margin-bottom: 9px;
 }
 
 /* panel */
@@ -56,48 +34,40 @@ h2 {
 .panel {
   color: #ffffff;
   background: #293449;
-  margin-bottom: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  
+  margin-bottom: 45px;
 }
 
 .panel-content {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   width: 940px;
   margin: 0 auto;
 }
 
-.index-logo {
-  width: 220px;
-  font-size: 24px;
-  line-height: 24px;
-  text-align: center;
-  vertical-align: top;
-  text-transform: uppercase;
-}
-
-.index-logo a {  
+.index-logo {  
   display: block;
+	box-sizing: border-box;
+	text-align: center;
+  vertical-align: top;
+		
+	padding-top: 10px;
+  min-height: 42px;
+	width: 220px;
+	
+  text-transform: uppercase;
   color: #ffffff;
   background-color:#ee3643;
   box-shadow: 0 5px #b52933;
   text-decoration: none;
   font-size: 24px;
-  line-height: 24px;
-  vertical-align: top;
-  padding: 9px;
 }
 
-.index-logo a:hover{
+.index-logo:hover{
   background-color:#ca2c37;
   box-shadow: 0 5px #9a212a;
 } 
 
-.index-logo a:activ {
+.index-logo:activ {
   background-color:#ba2732;
   box-shadow: 0 5px #8e1e26;
 }
@@ -106,7 +76,8 @@ h2 {
 /* Здесь я запуталась и не могу разобраться, как сделать, чтобы "лупа" отражалась, когда курсор находится в поле поиска и вводится текст. Мне в принципе не полностью понятен механизм, как правильно это осуществить. И у меня они (лупа и поле) как бы "не едиными" получились...  */
 
 .search-field {
-  width: 275px;
+	width: 270px;
+	box-sizing: border-box;
   position: relative;
 }
 
@@ -116,11 +87,10 @@ h2 {
   border: none;
   text-align: left;
   font-size: 17px;
-  line-height: 18px;
-  vertical-align: top;
-  padding: 12px 0;
-  padding-left: 50px;
-  color: #ffffff;
+	font-family: inherit;
+  padding-left: 48px;
+	padding-top: 0px;
+  min-height: 42px;
 }
 
 .btn-search {
@@ -222,32 +192,35 @@ h2 {
 
 .btn-panel {
   width: 150px;
+	box-sizing: border-box;
   text-align: center;
 }
 
-.btn-panel a {  
+.btn-panel-link{  
   display: block;
   color: #ffffff;
   text-decoration: none;
-  font-size: 17px;
-  line-height: 18px;
-  vertical-align: middle;
-  padding: 12px;
-  padding-bottom: 12px;
+	min-height: 42px;
+	line-height: 42px;
 }
 
 .btn-bookmark {
   position: relative;
+	padding-left: 17px;
 }
 
-.btn-bookmark::before {
-   content: "";
+.btn-bookmark::before, 
+.btn-cart::before {
+  content: "";
   position: absolute;
-  top: 50%;
-  left: 10%;
+  top: 48%;
+  left: 15%;
   transform:translate(-50%, -50%);
   background-image: url("../img/sprite.png");
   background-repeat: no-repeat;
+}
+
+.btn-bookmark::before {
   width: 14px;
   height: 16px;
   background-position: -10px -46px;
@@ -256,16 +229,10 @@ h2 {
 
 .btn-cart {
   position: relative;
+	padding-left: 19px;
 }
 
 .btn-cart::before {
-   content: "";
-  position: absolute;
-  top: 50%;
-  left: 10%;
-  transform:translate(-50%, -50%);
-  background-image: url("../img/sprite.png");
-  background-repeat: no-repeat;
   width: 17px;
   height: 16px;
   background-position: -10px -10px;
@@ -283,7 +250,6 @@ h2 {
 .btn:active {
   opacity: 0.6;
 }
-/* Почему на иконку карзины при нажатии не работает свойство, хотя на соседние элементы (закладки и оформление заказа) работает правильно? */
 
 .order {
   background-color: #63a63e;
@@ -304,9 +270,10 @@ h2 {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+	align-items: flex-start;
   width: 940px;
   margin: auto;
-  margin-bottom: 25px;
+  margin-bottom: 26px;
 }
 
 .caption {
@@ -316,12 +283,11 @@ h2 {
   font-size: 16px;
   font-weight: normal;
   line-height: 23px;
-  margin: 5px 50px;
+  margin: 3px 48px 8px 52px;
 }
 
 .contacts {
   width: 270px;
-  margin: 5px;
   margin-left: 20px;
   margin-right: 50px;
 }
@@ -332,9 +298,9 @@ h2 {
   border: 3px solid #ffffff;
   width: 182px;
   padding: 10px;
-  padding-left: 72px;
-  font-size: 21px;
-  line-height: 18px;
+  padding-left: 71px;
+  font-size: 20px;
+  line-height: 19px;
   font-weight: bolder;
 }
 
@@ -342,7 +308,7 @@ h2 {
   content: "";
   position: absolute;
   top: 50%;
-  left: 10%;
+  left: 8%;
   transform:translate(-50%, -50%);
   background-image: url("../img/sprite.png");
   background-repeat: no-repeat;
@@ -357,32 +323,31 @@ h2 {
   vertical-align: top;
   font-size: 14px;
   line-height: 24px;
-  margin-top: 2px;
+  margin-top: 3px;
 }
 
-/* user-block */
-/* Та же проблема, что и в "Поиске", нет ощущения единости и стойкое присутствие ощущения, что накосячила... Вот только в чем именно и как этому помочь - не пойму... */
+/* login-block */
+/* Та же проблема, что и в "Поиске", нет ощущения единости и стойкое присутствие ощущения, что накосячила... тот момент, когда справа-налево мышью ведешь "войти" становится черным, а стрелочка все еще окрашена синим */
 
-.user-block {
+.login-block {
   width: 120px;
   height: 45px;
   background: #ffffff;
   text-align: center;
-  margin: 5px;
   margin-left: 20px;
   margin-right: 5px;
 }
 
-.first-user-block {
+.check-in-block {
   width: 150px;
   height: 45px;
   background: #ffffff;
-  margin: 5px;
   margin-right: 0px;
+	margin-left: 5px;
   text-align: center;
 }
 
-.user-block a, .first-user-block a {
+.login, .check-in {
   display: block;
   text-decoration: none;
   font-size: 21px;
@@ -392,15 +357,15 @@ h2 {
   color: #000000;
 }
 
-.user-block a {
+.login {
   padding-left: 30px;
 }
 
-.user-block {
+.login-block {
   position: relative;
 }
 
-.user-block::before {
+.login-block::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -414,22 +379,22 @@ h2 {
   opacity: 1;
 }
 
-.user-block a:hover, .first-user-block a:hover {
+.login:hover, .check-in:hover {
   color: #ee3643;
 }
 
-.user-block a:active, .first-user-block a:active {
+.login:active, .check-in:active {
   color: #b2b2b2;
 }
 
-.user-block:hover::before {
+.login-block:hover::before {
   width: 20px;
   height: 17px;
   background-position: -10px -393px;
   opacity: 1;
 }
 
-.user-block:active::before {
+.login-block:active::before {
   width: 20px;
   height: 17px;
   background-position: -10px -430px;
@@ -442,52 +407,53 @@ h2 {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+	
   color: #ffffff;
   background: #32425c;
   box-shadow: 0 5px #293449;
+	
   width: 900px;
   margin: auto;
   text-transform: none;
   list-style: none;
-  font-size: 0;
   padding: 0 20px;
 }
 
-.item-main-navigation{
+.item-main-navigation {
   height: 55px;
-  font-size: 17px;
-  line-height: 17px;
+  line-height: 15px;
   vertical-align: top;
 }
 
-.main-navigation a{
+.link-main-navigation {
   display: block;
   color: #ffffff;
   text-decoration: none;
-  padding: 22px 31px;
+  padding: 21px 31px;
 }
 
-.main-navigation a:hover {
+.link-main-navigation:hover {
   background-color: #293449;
   padding-bottom: 21px;
 }
 
-.main-navigation a:active {
+.link-main-navigation:active {
   background-color: #1d2739;
   color: rgba(255,255,255,0.5);
   padding-bottom: 21px;
 }
 
-/* index тело станицы*/
+
+/* index тело станицы */
+
+
 /* container */
 
 .container {
-  display: flex;
-  flex-wrap: wrap; 
+  display: flex; 
   flex-direction: column;
   justify-content: center;
   margin: auto;
-  margin-top: 7px;
 }
 
 .section-main {
@@ -500,7 +466,7 @@ h2 {
   flex-wrap: wrap;
 }
 
-/*.features*/
+/* .features */
 
 .features {
   justify-content: space-between;
@@ -509,48 +475,47 @@ h2 {
   margin-top: 50px;
 }
 
-.features a {
+.features-link {
   position: absolute;
-  left: 20px;
-  bottom: 20px;
+  left: 24px;
+  bottom: 21px;
   color: #ffffff;
   text-decoration: none; 
   width: 135px;
-  padding: 12px 0px;
+  padding: 11px 0px;
   font-size: 14px;
   line-height: 18px;
   text-align: center;
-  vertical-align: middle;
   text-transform: uppercase;
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 3px;
 }
 
-.features a:hover {
+.features-link:hover {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.features a:active {
+.features-link:active {
   background-color: rgba(0, 0, 0, 0.3);
 }
-
 
 .features-item {
   position: relative;
   width: 300px;
   height: 123px;
   margin-bottom: 20px;
-  background: red;
+	background-color: #348911;
 }
 
 .features-item:last-child {
   margin-bottom: 0px;
 }
 
-.features h3 {
+.features-name {
   display: block;
-  width: 120px;
-  padding-left: 20px;
+  min-width: 120px;
+  margin-left: 22px;
+	margin-top: 22px;
   font-size: 24px;
   line-height: 30px;
   text-align: left;
@@ -573,12 +538,22 @@ h2 {
   padding-left: 31px;
 }
 
-.materials .icon-features img {
- margin-left: 20px;
+.icon-features-materials {
+  margin-left: 22px;
 }
 
-.tool .icon-features img {
- margin-left: 8px;
+.icon-features-tool {
+  margin-left: 6px;
+	margin-top: 2px;
+}
+
+.icon-features-discounts {
+	margin-top: -5px;
+	margin-left: 5px;
+}
+
+.icon-features-delivery {
+	margin-top: 1px;
 }
 
 .materials {
@@ -660,7 +635,7 @@ h2 {
 }
 
 
-.features-item-after-the-slider {
+.features-item-after-slider {
   display: flex; 
   flex-direction: column;
 }

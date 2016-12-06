@@ -1,122 +1,117 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <!-- Техномарт -->
     <meta charset="utf-8">
     <title>Техномарт</title>
     <link href="css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/normalize.css">
+    <link href="css/normalize.css" rel="stylesheet">
   </head>
   <body>
     <header class="main-header">
       <div class="container-header">
         <div class="panel"> 
           <div class="panel-content"> 
-            <div class="index-logo">
-              <a href="index.html">Техномарт</a>
+            <div class="index-logo-cover">
+              <a class="index-logo" href="index.html">Техномарт</a>
             </div>
             <div class="search-field">
               <form>
                 <input class="search" type="search" placeholder="Поиск:">
-                <button type="submit"  value="" class="btn-search"></button>
+                <button class="btn-search" type="submit"  value=""></button>
               </form>
             </div>
             <div class="btn-panel btn-bookmark">
-              <a class="btn bookmark" href="#">Закладки: 0</a>
+              <a class="btn-panel-link bookmark" href="#">Закладки: 0</a>
             </div>   
             <div class="btn-panel btn-cart">
-              <a class="btn cart" href="#">Корзина: 0</a>
+              <a class="btn-panel-link cart" href="#">Корзина: 0</a>
             </div>
             <div class="btn-panel btn-order">
-            <a class="btn order" href="#">Оформить заказ</a>
+            <a class="btn-panel-link order" href="#">Оформить заказ</a>
             </div>
           </div> 
         </div> 
         <div class="contacts-user">
           <b class="caption">Интернет-магазин строительных материалов <br>и инструментов для ремонта</b>  
-          <!-- Контакты -->
           <div class="contacts"> 
             <div class="phone-number">
               +7 (812) 555-05-55
             </div>
             <p class="adress">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>  
-          </div>
-          <!-- ЛК -->   
-          <div class="user-block">
+          </div> 
+          <div class="login-block">
             <a class="login" href="#">Войти</a>
           </div>
-          <div class="first-user-block">
+          <div class="check-in-block">
             <a class="check-in" href="#">Регистрация</a>
           </div>
         </div>   
-        <!-- Навигация -->
         <nav class="main-navigation">
           <ul class="list-main-navigation">
             <li class="item-main-navigation">
-              <a href="index.html">Главная</a>
+              <a class="link-main-navigation" href="index.html">Главная</a>
             </li>
             <li class="item-main-navigation">
-              <a href="#">Компания</a>
+              <a class="link-main-navigation" href="#">Компания</a>
             </li>
             <li class="item-main-navigation">
-              <a href="#">Каталог</a>
+              <a class="link-main-navigation" href="#">Каталог</a>
             </li>
             <li class="item-main-navigation">
-              <a href="#">Новости</a>
+              <a class="link-main-navigation" href="#">Новости</a>
             </li>
             <li class="item-main-navigation">
-              <a href="#">Спецпредложения</a>
+              <a class="link-main-navigation" href="#">Спецпредложения</a>
             </li>
             <li class="item-main-navigation">
-              <a href="#">Доставка</a>
+              <a class="link-main-navigation" href="#">Доставка</a>
             </li>
             <li class="item-main-navigation">
-              <a href="#">Контакты</a>
+              <a class="link-main-navigation" href="#">Контакты</a>
             </li>
           </ul>
         </nav>    
       </div>
     </header> 
-    <!-- Тело страницы -->
     <main class="container">
       <section class="section-main features">
         <div class="features-item materials">
           <h3 class="features-name">Материалы</h3>
-          <a href="#">На любой вкус</a>
+          <a class="features-link" href="#">На любой вкус</a>
           <div class="new-flag">
               <img src="img/new-flag.png" width="60" height="59" alt="new-flag"><!-- new -->
           </div>
           <div class="icon-features">
-              <img src="img/materials.png" width="44" height="65" alt="materials"><!-- иконка --><!-- иконки белые, их не видно на белом фоне -->
+              <img class="icon-features-materials" src="img/materials.png" width="44" height="65" alt="materials"><!-- иконка --><!-- иконки белые -->
           </div>
         </div>
         <div class="features-item tool">
           <h3 class="features-name">Инструмент</h3>
-          <a href="#">На все случаи</a>
+          <a class="features-link" href="#">На все случаи</a>
           <div class="new-flag">
               <img src="img/new-flag.png" width="60" height="59" alt="new-flag"><!-- new -->
           </div>
           <div class="icon-features">
-              <img src="img/tool.png" width="75" height="61" alt=""><!-- иконка -->
+              <img class="icon-features-tool" src="img/tool.png" width="75" height="61" alt=""><!-- иконка -->
           </div>
         </div>
         <div class="features-item equipment">
           <h3 class="features-name">Техника</h3>
-          <a href="#">Для стройки</a>
+          <a class="features-link" href="#">Для стройки</a>
           <div class="new-flag">
               <img src="img/new-flag.png" width="60" height="59" alt="new-flag"><!-- new -->
           </div>
           <div class="icon-features">
-              <img src="img/equipment.png" width="78" height="62" alt="equipment"><!-- иконка -->
+              <img class="icon-features-equipment" src="img/equipment.png" width="78" height="62" alt="equipment"><!-- иконка -->
           </div>
         </div>
         <div class="slider">
           <h3 class="slider-name">Перфораторы</h3>
           <p>Настоящие мужские игрушки</p>
           <div class="open-directory">
-            <a href="inner.html">Открыть каталог</a>
+            <a class="features-link" href="inner.html">Открыть каталог</a>
           </div>
           <div>
               <img src="img/punchers.jpg" width="620" height="266" alt=""><!-- фоновая картинка -->
@@ -125,35 +120,35 @@
           <h3 class="slider-name">Дрели</h3>
           <p>Соседям на радость!</p>
           <div class="open-directory">
-            <a href="#">Открыть каталог</a>
+            <a class="features-link" href="#">Открыть каталог</a>
           </div>
           <div>
-              <img src="img/drills.jpg" width="620" height="266" alt=""> <!-- фоновая картинка --> <!-- 
+              <img src="img/drills.jpg" width="620" height="266" alt="">  фоновая картинка 
           </div>
           -->
           <!--
             Здесь надо вставить радио-баттоны, привязать их к стрелочкам, но немного не понятно, как их работу связать вместе: стрелочки "листают" слайдер, баттоны тоже, но если добавиться третья страница слайдера (перенаполнение), то привязка должна быть такой - стрелочки соответствуют значениям следующая/предыдущая страницы, а вот значки радио-баттонов - соответствуют контретной странице слайдера... Как это правильно осуществить? Или я не верно понимаю саму суть вопроса? 
           -->
         </div> 
-        <div class="features-item-after-the-slider">
+        <div class="features-item-after-slider">
           <div class="features-item discounts">
             <h3 class="features-name">Скидки 50%</h3>
-            <a href="#">На 350 товаров</a>
+            <a class="features-link" href="#">На 350 товаров</a>
             <div class="new-flag">
               <img src="img/new-flag.png" width="60" height="59" alt="new-flag"><!-- new -->
             </div>
             <div class="icon-features">
-                <img src="img/discounts.png" width="59" height="72" alt="discounts"><!-- иконка -->
+                <img class="icon-features-discounts" src="img/discounts.png" width="59" height="72" alt="discounts"><!-- иконка -->
             </div>
           </div>
           <div class="features-item delivery">
             <h3 class="features-name">Доставка</h3>
-            <a href="#">Бесплатно</a>
+            <a class="features-link" href="#">Бесплатно</a>
             <div class="new-flag">
               <img src="img/new-flag.png" width="60" height="59" alt="new-flag"><!-- new -->
             </div>
             <div class="icon-features">
-                <img src="img/delivery.png" width="78" height="63" alt="delivery"><!-- иконка -->
+                <img class="icon-features-delivery" src="img/delivery.png" width="78" height="63" alt="delivery"><!-- иконка -->
             </div>
           </div>
         </div>
@@ -174,7 +169,7 @@
               <a href="#" class="bookmark">В закладки</a>
             </div>
             <div class="catalog-item-image">
-              <img src="img/bosch-BFG-9000.jpg" width="220" height="169" alt="Перфоратор BOSCH BFG 9000"><!-- фото перфоратора 1 -->
+              <img src="img/bosch-BFG-9000.jpg" width="220" height="169" alt="Перфоратор BOSCH BFG 9000">
             </div>
             <h3 class="title-goods">Перфоратор BOSCH BFG 9000</h3>
             <div class="price-before">32 500 Р.</div>
@@ -186,8 +181,8 @@
               <a href="#" class="bookmark">В закладки</a>
             </div>
             <div class="catalog-item-image">
-              <img src="img/bosch-BFG-3000.jpg" width="220" height="169" alt="Перфоратор BOSCH BFG 3000"><!-- фото перфоратора 2 -->
-            </div>
+              <img src="img/bosch-BFG-3000.jpg" width="220" height="169" alt="Перфоратор BOSCH BFG 3000">
+						</div>
             <h3 class="title-goods">Перфоратор BOSCH BFG 3000</h3>
             <div class="price-before">22 500 Р.</div>
             <div class="price-after">15 500 Р.</div>
@@ -198,7 +193,7 @@
               <a href="#" class="bookmark">В закладки</a>
             </div>
             <div class="catalog-item-image">
-              <img src="img/bosch-BFG-6000.jpg" width="220" height="169" alt="Перфоратор BOSCH BFG 6000"><!-- фото перфоратора 3 -->
+              <img src="img/bosch-BFG-6000.jpg" width="220" height="169" alt="Перфоратор BOSCH BFG 6000">
             </div>
             <h3 class="title-goods">Перфоратор BOSCH BFG 6000</h3>
             <div class="price-before">30 500 Р.</div>
@@ -210,15 +205,14 @@
               <a href="#" class="bookmark">В закладки</a>
             </div>
             <div class="catalog-item-image">
-              <img src="img/bosch-BFG-2000.jpg" width="220" height="169" alt="Перфоратор BOSCH BFG 2000"><!-- фото перфоратора 4 -->
+              <img src="img/bosch-BFG-2000.jpg" width="220" height="169" alt="Перфоратор BOSCH BFG 2000">
             </div>
             <h3 class="title-goods">Перфоратор BOSCH BFG 2000</h3>
             <div class="price-before"></div>
             <div class="price-after">12 500 Р.</div>
           </article>
-        </div>
-      </section>
-      <!-- Блок производителей -->
+				</div>
+			</section>
       <section class="section-main manufacturers">
         <div class="popular-manufacturers">
           <h2 class="popular-manufacturers-name">Популярные производители:</h2>
@@ -253,7 +247,6 @@
           </div>
         </div> 
       </section>   
-      <!-- Блок сервисов -->
       <div class="servis-content">
         <section class="section-main services">
           <div class="services-slogan">
@@ -305,7 +298,6 @@
           </div>
         </section> 
       </div>
-      <!-- Блок компании -->
       <section class="section-main technomart-company">
         <div class="about-technomart-company">
           <h2>Компания &laquo;Техномарт&raquo;</h2>
@@ -365,8 +357,7 @@
         </div>
       </section> 
     </main>
-    <!-- Футер --><!-- В футере изменен порядок элементов, для удобства восприятия разметки -->
-    <footer class="main-footer">
+    <footer class="main-footer"><!-- В футере изменен порядок элементов, для удобства восприятия разметки -->
       <div class="footer-container">
         <div class="logo-navigation">
           <div class="logo-navigation-content">
@@ -376,7 +367,6 @@
               </div>
               <p class="adress-footer">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 <br>+7 (812) 555-05-55</p>
             </div>
-            <!-- Навигация по сайту в футере-->
             <div class="footer-navigations">
               <nav class="footer-navigation">
                 <ul>
@@ -397,7 +387,6 @@
                   </li>
                 </ul>
               </nav>
-              <!-- Навигация по типам товаров в футере-->
               <nav class="footer-navigation-goods">
                 <ul>
                   <li>
@@ -427,18 +416,17 @@
             </section>
             <section class="mail">
               <p>Обратная связь:</p>
-              <a class="btn" href="">mail@htmlacademy.ru</a><!-- почта -->
+              <a class="btn" href="">mail@htmlacademy.ru</a>
             </section>
             <section class="author-copyright">
               <p>Разработано-</p>
-              <a class="btn" href="https://htmlacademy.ru">htmlacademy.ru</a><!-- разработано -->
+              <a class="btn" href="https://htmlacademy.ru">htmlacademy.ru</a>
             </section>
           </div>
         </div> 
       </div>
     </footer>
     <!--  Скрипт, открывающий/закрывающий попап от ссылки "Напишите нам!". 
-    Возможно тут нужны улучшения.
     -->
     <script> 
    
