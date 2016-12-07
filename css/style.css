@@ -473,6 +473,7 @@ h2 {
   align-self: flex-start;
   color: #ffffff;
   margin-top: 50px;
+	margin-bottom: 52px;
 }
 
 .features-link {
@@ -640,42 +641,45 @@ h2 {
   flex-direction: column;
 }
 
-/*.goods*/
+/* .goods, .manufacturers */
 
-.popular-goods {
+.goods {
+margin-bottom: 0px;	
+}
+
+.popular-goods,
+.popular-manufacturers {
   display: flex;
   justify-content: space-between;
+	align-items: center;
   width: 940px;
+	min-height: 90px;
   background: #f7f3ec;
   margin-bottom: 20px;
 }
 
-.goods h2 {
-  padding-left: 30px;
-  margin-top: 25px;
+.popular-goods-name,
+.popular-manufacturers-name {
+  margin-left: 28px;
   font-size: 30px;
-  line-height: 30px;
-  text-align: left;
-  vertical-align: top;
   text-transform: uppercase;
   color: #32425c;
 }
 
-.popular-goods-link {
+.popular-goods-link-box,
+.popular-manufacturers-link-box {
   text-align: center;
-  vertical-align: top;
   width: 255px;
   height: 40px;
-  margin: 25px;
+  margin-right: 23px;
 }
 
-.popular-goods-link a {
+.popular-goods-link,
+.popular-manufacturers-link {
   display: block;
   text-decoration: none; 
   font-size: 14px;
   line-height: 18px;
-  text-align: center;
-  vertical-align: top;
   text-transform: uppercase;
   background: #ee3643;
   border-radius: 2px;
@@ -689,53 +693,7 @@ h2 {
   width: 940px;
 }
 
-
-/*.manufacturers*/
-
-.manufacturers {
- 
-}
-
-.popular-manufacturers {
-  display: flex;
-  justify-content: space-between;
-  width: 940px;
-  background: #f7f3ec;
-  margin-bottom: 20px;
-}
-
-.manufacturers h2 {
-  padding-left: 30px;
-  margin-top: 25px;
-  font-size: 30px;
-  line-height: 30px;
-  text-align: left;
-  vertical-align: top;
-  text-transform: uppercase;
-  color: #32425c;
-}
-
-.popular-manufacturers-link {
-  text-align: center;
-  vertical-align: top;
-  width: 255px;
-  height: 40px;
-  margin: 25px;
-}
-
-.popular-manufacturers-link a {
-  display: block;
-  text-decoration: none; 
-  font-size: 14px;
-  line-height: 18px;
-  text-align: center;
-  vertical-align: top;
-  text-transform: uppercase;
-  background: #ee3643;
-  border-radius: 2px;
-  padding: 11px;
-  color: #ffffff;
-}
+/* .manufacturers-list */
 
 .manufacturers-list {
   display: flex;
