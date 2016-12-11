@@ -91,6 +91,7 @@ h2 {
   padding-left: 48px;
 	padding-top: 0px;
   min-height: 42px;
+	width: 265px;
 }
 
 .btn-search {
@@ -117,26 +118,18 @@ h2 {
   opacity: 0.3;
 }
 
-
-.btn-search:hover::after{
+.btn-search:hover::after,
+.search:hover + .btn-search::after {
   opacity:1;
 }
 
-.btn-search:active::after{
+.btn-search:active::after, 
+.search:focus + .btn-search::after {
   width: 17px;
   height: 17px;
   background-position: -10px -677px;
   opacity:1;
 }
-/*
-
-.search:focus .btn-search::after{
-  width: 17px;
-  height: 17px;
-  background-position: -10px -677px;
-  opacity:1;
-}
-*/
 
 .search-field input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
  color:#ffffff;
@@ -326,9 +319,6 @@ h2 {
   margin-top: 3px;
 }
 
-/* login-block */
-/* Та же проблема, что и в "Поиске", нет ощущения единости и стойкое присутствие ощущения, что накосячила... тот момент, когда справа-налево мышью ведешь "войти" становится черным, а стрелочка все еще окрашена синим */
-
 .login-block {
   width: 120px;
   height: 45px;
@@ -358,14 +348,11 @@ h2 {
 }
 
 .login {
+	position: relative;
   padding-left: 30px;
 }
 
-.login-block {
-  position: relative;
-}
-
-.login-block::before {
+.login::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -387,14 +374,14 @@ h2 {
   color: #b2b2b2;
 }
 
-.login-block:hover::before {
+.login:hover::before {
   width: 20px;
   height: 17px;
   background-position: -10px -393px;
   opacity: 1;
 }
 
-.login-block:active::before {
+.login:active::before {
   width: 20px;
   height: 17px;
   background-position: -10px -430px;
@@ -577,11 +564,44 @@ h2 {
   background: #f6b22d;
 }
 
-.slider {
+.sliders {
   position: relative;
   width: 620px;
   height: 266px;
   background: #000000 ;
+}
+
+.sliders::after, 
+.sliders::before {
+	content: "";
+  position: absolute;
+  transform:translate(-50%, -50%);
+  background-image: url("../img/sprite.png");
+  background-repeat: no-repeat;
+}
+
+.sliders::after {
+	top: 50%;
+  left: 5%;
+	width: 22px;
+  height: 40px;
+  background-position: -10px -333px;
+}
+
+.sliders::before {
+	top: 50%;
+  left: 95%;
+	width: 22px;
+  height: 40px;
+  background-position: -10px -580px;
+}
+
+.sliders input[type="radio"] {
+  display: none;
+}
+
+.slider {
+	display: none;
 }
 
 .slider-name {
@@ -607,6 +627,36 @@ h2 {
   vertical-align: top;
   font-family: "PT Sans", sans-serif;
   font-weight: normal;
+}
+
+.slider-controls {
+  position: absolute;
+	left: 47%;
+	bottom: 10%;
+	z-index: 20;
+  font-size: 0;
+}
+	
+.slider-controls label {
+	display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 8px;
+  vertical-align: top;
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#punchers:checked  ~ .slider-punchers,
+#drills:checked  ~ .slider-drills {
+	display: block;
+}
+
+#punchers:checked ~ .slider-controls label[for="punchers"],
+#drills:checked ~ .slider-controls label[for="drills"] {
+  background-color: #ee3643;
 }
 
 .open-directory a {

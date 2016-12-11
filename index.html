@@ -107,28 +107,33 @@
               <img class="icon-features-equipment" src="img/equipment.png" width="78" height="62" alt="equipment"><!-- иконка -->
           </div>
         </div>
-        <div class="slider">
-          <h3 class="slider-name">Перфораторы</h3>
-          <p>Настоящие мужские игрушки</p>
-          <div class="open-directory">
-            <a class="features-link" href="inner.html">Открыть каталог</a>
+        <div class="sliders">
+					<input type="radio" name="slider-link" value="punchers" id="punchers" checked>
+					<input type="radio" name="slider-link" value="drills" id="drills">
+					<div class="slider slider-punchers">
+					  <h3 class="slider-name">Перфораторы</h3>
+						<p>Настоящие мужские игрушки</p>
+						<div class="open-directory">
+							<a class="features-link" href="inner.html">Открыть каталог</a>
+						</div>
+						<div>
+								<img src="img/punchers.jpg" width="620" height="266" alt="">
+						</div>
+					</div>
+				  <div class="slider slider-drills">
+						<h3 class="slider-name">Дрели</h3>
+						<p>Соседям на радость!</p>
+						<div class="open-directory">
+							<a class="features-link" href="#">Открыть каталог</a>
+						</div>
+						<div>
+								<img src="img/drills.jpg" width="620" height="266" alt="">
+						</div>
+				  </div>
+					<div class="slider-controls">
+            <label for="punchers"></label>
+            <label for="drills"></label>
           </div>
-          <div>
-              <img src="img/punchers.jpg" width="620" height="266" alt=""><!-- фоновая картинка -->
-          </div>
-          <!-- 
-          <h3 class="slider-name">Дрели</h3>
-          <p>Соседям на радость!</p>
-          <div class="open-directory">
-            <a class="features-link" href="#">Открыть каталог</a>
-          </div>
-          <div>
-              <img src="img/drills.jpg" width="620" height="266" alt="">  фоновая картинка 
-          </div>
-          -->
-          <!--
-            Здесь надо вставить радио-баттоны, привязать их к стрелочкам, но немного не понятно, как их работу связать вместе: стрелочки "листают" слайдер, баттоны тоже, но если добавиться третья страница слайдера (перенаполнение), то привязка должна быть такой - стрелочки соответствуют значениям следующая/предыдущая страницы, а вот значки радио-баттонов - соответствуют контретной странице слайдера... Как это правильно осуществить? Или я не верно понимаю саму суть вопроса? 
-          -->
         </div> 
         <div class="features-item-after-slider">
           <div class="features-item discounts">
