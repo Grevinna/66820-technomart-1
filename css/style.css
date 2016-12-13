@@ -73,7 +73,6 @@ h2 {
 }
 
 /* .search */
-/* Здесь я запуталась и не могу разобраться, как сделать, чтобы "лупа" отражалась, когда курсор находится в поле поиска и вводится текст. Мне в принципе не полностью понятен механизм, как правильно это осуществить. И у меня они (лупа и поле) как бы "не едиными" получились...  */
 
 .search-field {
 	width: 270px;
@@ -223,6 +222,10 @@ h2 {
 .btn-cart {
   position: relative;
 	padding-left: 19px;
+}
+
+.btn-cart:active {
+  background-color: #ee3643;
 }
 
 .btn-cart::before {
@@ -631,8 +634,8 @@ h2 {
 
 .slider-controls {
   position: absolute;
-	left: 47%;
-	bottom: 10%;
+	left: 48%;
+	bottom: 13%;
 	z-index: 20;
   font-size: 0;
 }
@@ -663,8 +666,8 @@ h2 {
   left: 25px;
   bottom: 22px;
   width: 195px;
-  height: 20px;
-  vertical-align: middle;
+  vertical-align: top;
+	line-height: 16px;
   background: #ee3643;
 }
 
@@ -1849,6 +1852,7 @@ inner
   font-family: "PT Sans", sans-serif;
   background-color: #ffffff;
   margin-top: 69px;
+	cursor: pointer;
 }
 
 /* .sorting */
@@ -1863,73 +1867,71 @@ inner
 
 .sorting-tool {
   display: flex;
+	align-items: center;
   font-size: 13px;
-  line-height: 18px;
+  line-height: 34px;
   text-align: left;
   vertical-align: top;
   text-transform: uppercase;
-  font-family: "PT Sans", sans-serif;
-  padding: 10px 0px 5px 20px;
+  font-family: "PT Sans", "Arial", sans-serif;
+  padding: 0px 20px;
   background-color: #f7f3ec;
   margin-bottom: 20px;
 }
 
-.sorting-tool b {
+.sorting-title {
+	margin: 0px;
   margin-right: 140px;
   font-weight: normal;
+	font-size: 13px;
 }
 
-.sorting-tool .price { 
+.sorting-price { 
   margin-right: 66px;
 }
 
-.sorting-tool .type {
+.sorting-type {
   margin-right: 62px;
 }
 
-.sorting-tool .functional {
+.sorting-functional {
   margin-right: 47px;
 }
 
-.sorting-item input {
-  display: none;
-}
-
-.sorting-item label {
+.sorting-item {
   cursor:pointer;
   color: #b2b2b2;
+	text-decoration: none;
   border-bottom: 1px dotted #ee3643;
 }
 
-.sorting-item label:hover {
+.sorting-item:hover {
   color: #000000;
   border-bottom: 1px solid #ee3643;
 }
 
-.sorting-item input:checked ~ label {
+.sorting-item:active {
   color: #ee3643;
   border-bottom: 0px;
 }
-/* не срабатывает нажатие, не изменяется цвет, ну я же не чекбокс использую... А судя по всему тут именно он и нужен? Надо переделать! */
 
-/* .arrow */
+/*  .arrow  */
 
-.arrow{
-  display: none;
+.sorting-direction {
+  position: relative;
+  margin-left: auto;
 }
 
-.arrow + label {
-  display: inline-block;
+.arrow {
   font-size: 0;
-  margin-top: 3px;
-  cursor:pointer;
+  cursor: pointer;
 }
 
-.arrow-up + label {
-  margin-right: 18px;
+.arrow-up {
+  margin-right: 15px;
 }
 
-.arrow + label::before {
+.arrow::before {
   content: "";
   display: inline-block;
   border: 10px solid #c6c2bd;
@@ -1937,24 +1939,31 @@ inner
   border-left-width: 5px;
   border-right-color: transparent;
   border-left-color: transparent;
+  border-top-color: #c6c2bd;
+  border-bottom-color: #c6c2bd;
 }
 
-.arrow-up + label::before {
+.arrow-up::before {
   border-top-width: 0;
 }
 
-.arrow-down + label::before {
+.arrow-down::before {
   border-bottom-width: 0;
 }
 
-.arrow:checked + label::before {
+.arrow:hover::before {
+  border-top-color: #272727;
+  border-bottom-color: #272727;
+}
+
+.arrow:active::before {
   border-top-color: #ee3643;
   border-bottom-color: #ee3643;
 }
 
-.arrow + label:hover::before {
-  border-top-color: #272727;
-  border-bottom-color: #272727;
+.arrow-active::before, .arrow-active:hover::before, .arrow-active:active::before {
+  border-top-color: #ee3643;
+  border-bottom-color: #ee3643;
 }
 
 /* .sorting-goods-list */
@@ -2093,6 +2102,7 @@ inner
   margin-top: 10px;
   margin-bottom: 15px;
   padding: 0 25px;
+	font-family: "PT Sans", "Arial", sans-serif;;
 }
 
 .goods-item .price-before {
@@ -2244,7 +2254,6 @@ inner
   width: 100%;
   padding-top: 36px;
   padding-bottom: 70px;
-  
 }
 
 .pages {
