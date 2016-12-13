@@ -659,32 +659,22 @@ h2 {
   background-color: #ee3643;
 }
 
-.open-directory a {
-  position: absolute;
+.open-directory-link {
   left: 25px;
   bottom: 22px;
-  color: #ffffff;
-  text-decoration: none; 
   width: 195px;
   height: 20px;
-  font-size: 14px;
-  line-height: 18px;
-  text-align: center;
   vertical-align: middle;
-  text-transform: uppercase;
   background: #ee3643;
-  border-radius: 3px;
 }
 
-.open-directory a:hover {
+.open-directory-link:hover {
   background: #ca2c37;
 }
 
-
-.open-directory a:active {
+.open-directory-link:active {
   background: #ba2732;
 }
-
 
 .features-item-after-slider {
   display: flex; 
@@ -767,7 +757,6 @@ margin-bottom: 0px;
 }
 
 /*.services*/
-/* Не работает переключатель, хотя кажется все как-будто правильно должно быть... по той же схеме делала на  inner переключатели в фильтре, там все работает... Явно здесь я что-то сделала не то, но что именно? */
 
 .servis-content {
   width: 100%;
@@ -800,20 +789,19 @@ margin-bottom: 0px;
   position: relative;
   width: 240px;
   padding-bottom: 100px;
-  
 }
 
 .vertical-shadow {
   position: absolute;
   left: 240px;
-  top: -45px
+  top: -45px;
 }
 
-.paper-btn input {
-    display: none
+.yes-radio {
+  display: none;
 }
 
-.paper-btn label {
+.paper-btn {
   display: inline-block;
   width: 210px;
   line-height: 30px;
@@ -827,13 +815,13 @@ margin-bottom: 0px;
   padding: 16px 20px;
 }
 
-.paper-btn label:hover {
+.paper-btn:hover {
   background-color: #293449;
 }
 
-.paper-btn #yes-delivery:checked ~ label[for="yes-delivery"],
-.paper-btn #yes-guarantee:checked ~ label[for="yes-guarantee"],
-.paper-btn #yes-credit:checked ~ label[for="yes-credit"] { 
+#yes-delivery:checked ~ .paper-btn-delivery[for="yes-delivery"],
+#yes-guarantee:checked ~ .paper-btn-guarantee[for="yes-guarantee"],
+#yes-credit:checked ~ .paper-btn-credit[for="yes-credit"] { 
   color:#32425c;
   background-color: #ffffff;
   box-shadow:
@@ -848,7 +836,7 @@ margin-bottom: 0px;
   margin-left: 80px;
 }
 
-#yes-delivery:checked ~ .services-slider-slogan .services-content-slogan:nth-child(1) {
+#yes-delivery:checked ~ .services-content-slogan:nth-child(1) {
   display: block;
 }
 
