@@ -1026,179 +1026,6 @@ margin-bottom: 0px;
   left: -35px;
 }
 
-/* Всплывающая карта */
-/* Всплывающая карта так и не завершена, скрипты не прописаны.
-   Не разобралась с нюансами, как лучше и правильнее делать и  в каком случае. Говорят, что в основном надо вставлять интерактивную  (яндекс, гугл), но хочется понять суть способов.
-*/
-
-.modal-content-map {
-  display: none;
-  position: absolute;
-  top: -13%;
-  left: -213%;
-  z-index: 20;
-  width: 940px;
-  height: 446px;
-  margin-top: 0px;
-  margin-left: 0px;
-  background: url("../img/big-map.png");
-  box-shadow: 0 0px 15px 5px #c4c3c4;
-}
-
-.modal-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.0);
-}
-
-/* Всплывающая форма */
-
-.modal-content-mail {
-  display: none;
-  position: absolute;
-  top: 125px;
-  left: -44%;
-  width: 460px;
-  margin-left: -350px;
-  padding: 45px 80px 40px 80px;
-  color: #000000;
-  background: #ffffff;
-  background-position: 30px;
-  box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.7),
-    0 -113px 0px #f1f1f1 inset;
-  border-top: 7px solid #ee3643;
-}
-
-.modal-content-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 28px;
-  height: 25px;
-  font-size: 0;
-  background-color: transparent;
-  border: 0;
-  outline: 0;
-  cursor: pointer;
-}
-
-.modal-content-close::before,
-.modal-content-close::after {
-  content: "";
-  position: absolute;
-  top: 7px;
-  left: 5px;
-  width: 27px;
-  height: 5px;
-  background-color: #ee3643;
-  border-radius: 1px;
-}
-
-.modal-content-close::before {
-  transform: rotate(45deg);
-}
-
-.modal-content-close::after {
-  transform: rotate(-45deg);
-}
-
-.modal-content .mail-form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.mail-form input[type="text"],
-.mail-form input[type="password"],
-.mail-form textarea{
-  width: 186px;
-  margin-bottom: 15px;
-  padding: 5px 15px;
-  font-size: 14px;
-  line-height: 24px;
-  font-family: "PT Sans", sans-serif;
-  color: #000000;
-  border: 2px solid #d7dcde;
-  border-radius: 3px;
-  outline: none;
-  margin-top: 10px;
-}
-
-.mail-form textarea{
-  width: 426px;
-}
-
-.mail-form label {
-  display: inline-block;
-  width: 220px;
-  font-size: 18px;
-  line-height: 18px;
-  font-weight: bold;
-  font-family: "PT Sans", sans-serif;
-  margin-bottom: 5px;
-  
-}
-
-.mail-form label:nth-child(3) {
-  width: 460px;
-  margin-bottom: 33px;
-}
-
-.mail-form .btn {
-  width: 100%;
-  margin-top: 25px;
-  background-color: #ee3643;
-  border: 0px solid #000000;
-  border-radius: 3px;
-  color: #ffffff;
-  text-transform: uppercase;
-  font-family: "PT Sans", sans-serif;
-  font-size: 14px;
-  line-height: 18px;
-  padding: 10px;
-}
-
-.modal-content-show {
-  display: block;
-  animation: bounce 0.6s;
-}
-
-@keyframes bounce {
-  0%   {
-    transform: translateY(-2000px);
-  }
-  70%  {
-    transform: translateY(30px);
-  }
-  90%  {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-.modal-error {
-  animation: shake 0.6s;
-}
-
-@keyframes shake {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  10%, 30%, 50%, 70%, 90% {
-    transform: translateX(-10px);
-  }
-  20%, 40%, 60%, 80% {
-    transform: translateX(10px);
-  }
-}
 
 /*
 
@@ -2136,13 +1963,287 @@ inner
   border-left-color: #ee3643;
 }
 
+/* .pages */
+/* Индикатор активности (находимся на этой странице) не сделан: какой селектор в этом случае правильно использовать? */
+
+.switch-pages {
+  width: 100%;
+  padding-top: 36px;
+  padding-bottom: 70px;
+}
+
+.pages {
+  width: 940px;
+  margin: auto;
+}
+
+.page {
+}
+
+.pages a {
+  color: #000000;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  border: 1px solid #e5e5e5;
+  border-radius: 2px;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: bold;
+  margin: 3px;
+}
+
+.pages a:first-child {
+  margin-left: 240px;
+}
+
+.pages a:last-child {
+  padding: 10px 35px;
+}
+
+.pages a:hover {
+ border: 1px solid #bdc6ca;
+}
+
+.pages a:active {
+  border: 1px solid #ee3643;
+}
+
+ /* .on-product-pages */
+
+.on-product-pages {
+  width: 100%;
+  background: #f2f6f8;
+  padding-top: 40px;
+  padding-bottom: 70px;
+}
+
+.on-product {
+  width: 940px;
+  margin: auto;
+}
+
+.on-product h2{
+  font-size: 30px;
+  line-height: 30px;
+  text-align: left;
+  vertical-align: top;
+  text-transform: uppercase;
+}
+
+.on-product p {
+  font-size: 14px;
+  line-height: 24px;
+  text-align: left;
+  vertical-align: top;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+
+
+
+/* Всплывающая карта */
+/* Всплывающая карта так и не завершена, скрипты не прописаны.
+   Не разобралась с нюансами, как лучше и правильнее делать и  в каком случае. Говорят, что в основном надо вставлять интерактивную  (яндекс, гугл), но хочется понять суть способов.
+*/
+
+
+
+.modal-content-map {
+  display: none;
+  position: absolute;
+  top: -13%;
+  left: -213%;
+  z-index: 20;
+  width: 940px;
+  height: 446px;
+  margin-top: 0px;
+  margin-left: 0px;
+  background: url("../img/big-map.png");
+  box-shadow: 0 0px 15px 5px #c4c3c4;
+}
+
+.modal-content-map-show {
+  display: block;
+}
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.0);
+}
+
+
+
+
+/* Всплывающая форма */
+
+
+
+
+.modal-content-mail {
+  display: none;
+  position: absolute;
+  top: 125px;
+  left: -44%;
+  width: 460px;
+  margin-left: -350px;
+  padding: 45px 80px 40px 80px;
+  color: #000000;
+  background: #ffffff;
+  background-position: 30px;
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.7),
+    0 -113px 0px #f1f1f1 inset;
+  border-top: 7px solid #ee3643;
+}
+
+.modal-content-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 28px;
+  height: 25px;
+  font-size: 0;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+.modal-content-close::before,
+.modal-content-close::after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 5px;
+  width: 27px;
+  height: 5px;
+  background-color: #ee3643;
+  border-radius: 1px;
+}
+
+.modal-content-close::before {
+  transform: rotate(45deg);
+}
+
+.modal-content-close::after {
+  transform: rotate(-45deg);
+}
+
+.modal-content .mail-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.mail-form input[type="text"],
+.mail-form input[type="password"],
+.mail-form textarea{
+  width: 186px;
+  margin-bottom: 15px;
+  padding: 5px 15px;
+  font-size: 14px;
+  line-height: 24px;
+  font-family: "PT Sans", sans-serif;
+  color: #000000;
+  border: 2px solid #d7dcde;
+  border-radius: 3px;
+  outline: none;
+  margin-top: 10px;
+}
+
+.mail-form textarea{
+  width: 426px;
+}
+
+.mail-form label {
+  display: inline-block;
+  width: 220px;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: bold;
+  font-family: "PT Sans", sans-serif;
+  margin-bottom: 5px;
+  
+}
+
+.mail-form label:nth-child(3) {
+  width: 460px;
+  margin-bottom: 33px;
+}
+
+.mail-form .btn {
+  width: 100%;
+  margin-top: 25px;
+  background-color: #ee3643;
+  border: 0px solid #000000;
+  border-radius: 3px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: "PT Sans", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  padding: 10px;
+}
+
+.modal-content-show {
+  display: block;
+  animation: bounce 0.6s;
+}
+
+@keyframes bounce {
+  0%   {
+    transform: translateY(-2000px);
+  }
+  70%  {
+    transform: translateY(30px);
+  }
+  90%  {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.modal-error {
+  animation: shake 0.6s;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px);
+  }
+}
+
+
+
+
+
 /* попап добавления в корзину */
 
 /*
 Не понятно, как лучше позиционировать относительно вьюпорта. К какому блоку привязывать? Ведь на главной (index) тоже есть блочки с товарами, они же тоже должны "срабатывать". Как сделать так, чтобы клик по товару отражался к корзине? JS? или это уже лишнее? (или я не так поняла ТЗ) 
 */
 
-.modal-content-basket{
+.modal-content-basket {
+	display: block;
+}
+
+.modal-content-basket {
   display: none;
   position: absolute;
   top: 300px;
@@ -2247,82 +2348,19 @@ inner
 }
 
 
-/* .pages */
-/* Индикатор активности (находимся на этой странице) не сделан: какой селектор в этом случае правильно использовать? */
 
-.switch-pages {
-  width: 100%;
-  padding-top: 36px;
-  padding-bottom: 70px;
-}
 
-.pages {
-  width: 940px;
-  margin: auto;
-}
 
-.page {
-}
 
-.pages a {
-  color: #000000;
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 10px 15px;
-  border: 1px solid #e5e5e5;
-  border-radius: 2px;
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: bold;
-  margin: 3px;
-}
 
-.pages a:first-child {
-  margin-left: 240px;
-}
 
-.pages a:last-child {
-  padding: 10px 35px;
-}
 
-.pages a:hover {
- border: 1px solid #bdc6ca;
-}
 
-.pages a:active {
-  border: 1px solid #ee3643;
-}
 
- /* .on-product-pages */
 
-.on-product-pages {
-  width: 100%;
-  background: #f2f6f8;
-  padding-top: 40px;
-  padding-bottom: 70px;
-}
 
-.on-product {
-  width: 940px;
-  margin: auto;
-}
 
-.on-product h2{
-  font-size: 30px;
-  line-height: 30px;
-  text-align: left;
-  vertical-align: top;
-  text-transform: uppercase;
-}
 
-.on-product p {
-  font-size: 14px;
-  line-height: 24px;
-  text-align: left;
-  vertical-align: top;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
 
   /*
 

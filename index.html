@@ -316,9 +316,8 @@
           <p>Вы можете забрать товар сами, <br>заехав в наш офис:</p>
           <div class="modal-content-map">
             <button class="modal-content-close" type="button" title="Закрыть">Закрыть</button>
-            <!--     Как правильно осуществить блок карт при помощи картинок? В макете есть скрытые слои, которые соответствуют большой карте и еще один слой с масштабом, приближающим объект. Как с ним нужно поступить - их надо каким-то образом переключать поочереди, как в слайде?        -->
             
-            <!--  <img src="img/big-map.png" width="940" height="446" alt="">-->
+              <img src="img/big-map.png" width="940" height="446" alt="">
             
             <!--  <div id="yandex-map"></div>
 
@@ -425,33 +424,6 @@
         </div> 
       </div>
     </footer>
-    <!--  Скрипт, открывающий/закрывающий попап от ссылки "Напишите нам!". 
-    -->
-    <script> 
-   
-      var link = document.querySelector(".btn-mail");
-      var popup = document.querySelector(".modal-content");
-      var close = popup.querySelector(".modal-content-close");
-
-      link.addEventListener("click", function(event) {
-        event.preventDefault();
-        popup.classList.add("modal-content-show");
-      });
-
-      close.addEventListener("click", function(event) {
-        event.preventDefault();
-        popup.classList.remove("modal-content-show");
-        popup.classList.remove("modal-error");
-      });
-
-      window.addEventListener("keydown", function(event) {
-        if (event.keyCode === 27) {
-          if (popup.classList.contains("modal-content-show")) {
-            popup.classList.remove("modal-content-show");
-            popup.classList.remove("modal-error");
-          }
-        }
-      });
-    </script>
+		<script src="js/script.js"></script>
   </body>
 </html>
