@@ -739,6 +739,7 @@ margin-bottom: 0px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+	margin-bottom: 10px;
 }
 
 .manufacturers-list-item {
@@ -793,7 +794,7 @@ margin-bottom: 0px;
 
 .vertical-shadow {
   position: absolute;
-  left: 240px;
+  left: 230px;
   top: -45px;
 }
 
@@ -803,7 +804,8 @@ margin-bottom: 0px;
 
 .paper-btn {
   display: inline-block;
-  width: 210px;
+	box-sizing: border-box;
+  width: 240px;
   line-height: 30px;
   font-size: 21px;
   color: #ffffff;
@@ -819,9 +821,9 @@ margin-bottom: 0px;
   background-color: #293449;
 }
 
-#yes-delivery:checked ~ .paper-btn-delivery[for="yes-delivery"],
-#yes-guarantee:checked ~ .paper-btn-guarantee[for="yes-guarantee"],
-#yes-credit:checked ~ .paper-btn-credit[for="yes-credit"] { 
+#yes-delivery:checked ~ .about-services .paper-btn-delivery[for="yes-delivery"],
+#yes-guarantee:checked ~ .about-services .paper-btn-guarantee[for="yes-guarantee"],
+#yes-credit:checked ~ .about-services .paper-btn-credit[for="yes-credit"] { 
   color:#32425c;
   background-color: #ffffff;
   box-shadow:
@@ -836,15 +838,15 @@ margin-bottom: 0px;
   margin-left: 80px;
 }
 
-#yes-delivery:checked ~ .services-content-slogan:nth-child(1) {
+#yes-delivery:checked ~ .about-services .services-content-slogan:nth-child(1) {
   display: block;
 }
 
-#yes-guarantee:checked ~ .services-slider-slogan .services-content-slogan:nth-child(2) {
+#yes-guarantee:checked ~ .about-services .services-content-slogan:nth-child(2) {
   display: block;
 }
 
-#yes-credit:checked ~ .services-slider-slogan .services-content-slogan:nth-child(3) {
+#yes-credit:checked ~ .about-services .services-content-slogan:nth-child(3) {
   display: block;
 }
 
@@ -1234,26 +1236,16 @@ footer
   flex-direction: column;
 }
 
-footer .index-logo {
-  width: 220px;
-  background-color:#ee3643;
-  box-shadow: 0 5px #b52933;
-  font-size: 30px;
-  line-height: 30px;
-  text-align: center;
-  vertical-align: top;
-  text-transform: uppercase;
+footer .index-logo-cover {
   margin-bottom: 15px;
 }
 
-footer .index-logo a {  
-  display: block;
+footer .index-logo {  
   color: #ffffff;
-  text-decoration: none;
   font-size: 30px;
   line-height: 30px;
-  vertical-align: middle;
   padding: 17px;
+	cursor: pointer;
 }
 
 .footer-navigations {
@@ -1319,7 +1311,7 @@ footer .index-logo a {
 }
 
 li {
- list-style-type: none; /* Убираем маркеры на всем макете. В данном случае мне было удобно так сдделать но на сколько я понимаю - это плохая практика и надо было к каждому списку отдельно применять. Так? */
+ list-style-type: none;
 }
 
 .social-copyright-content {
@@ -1328,6 +1320,7 @@ li {
   width: 940px;
   margin: auto;
   justify-content: space-between;
+	align-items: center;
   font-size: 16px;
   line-height: 18px;
   margin-top: 35px;
@@ -1349,7 +1342,7 @@ li {
 }
 
 .footer-social {
-  margin: 0px 10px;
+	margin-left: 107px;
   text-align: center;
 }
 
@@ -1363,13 +1356,20 @@ li {
   margin: 0px;
 }
 
+.mail {
+  margin-left: 70px;	
+}
+
+.author-copyright {
+  margin-right: 20px;	
+}
+
 .social-btn {
   display: inline-block;
   position: relative;
   width: 42px;
   height: 42px;
-  margin: 0 2px;
-  font-size: 0; /*  скрывает текст */
+  font-size: 0;
   vertical-align: top;
   text-decoration: none;
   border-radius: 50%;
@@ -1427,7 +1427,7 @@ inner
   position: relative;
   width: 300px;
   background-color: #ffffff;
-  margin-top: 5px;
+  margin-bottom: 3px;
 }
 
 .user-name::before {
@@ -1547,13 +1547,15 @@ inner
   display: flex;
   position: relative;
   flex-direction: row;
+	align-items: flex-start;
   width: 940px;
   margin: auto;
   padding: 0px;
+	min-height: 50px;
 }
 
 .breadcrumbs ul li {
-  margin: 17px 20px;
+  margin: 11px 20px;
   text-align: center;
   vertical-align: top;
   font-size: 13px;
@@ -1565,10 +1567,12 @@ inner
   margin-left: 0px;
 }
 
-.breadcrumbs ul li:nth-child(1)::after {
+.breadcrumbs ul li:nth-child(1)::after, 
+.breadcrumbs ul li:nth-child(2)::after, 
+.breadcrumbs ul li:nth-child(3)::after {
   content: "";
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 32px;
   transform:translate(-50%, -50%);
   background-image: url("../img/sprite.breadcrumbs.png");
@@ -1580,31 +1584,11 @@ inner
 }
 
 .breadcrumbs ul li:nth-child(2)::after {
-  content: "";
-  position: absolute;
-  top: 50%;
   left: 127px;
-  transform:translate(-50%, -50%);
-  background-image: url("../img/sprite.breadcrumbs.png");
-  background-repeat: no-repeat;
-  width: 8px;
-  height: 12px;
-  background-position: -10px -42px;
-  opacity: 1;
 }
-
+ 
 .breadcrumbs ul li:nth-child(3)::after {
-  content: "";
-  position: absolute;
-  top: 50%;
   left: 247px;
-  transform:translate(-50%, -50%);
-  background-image: url("../img/sprite.breadcrumbs.png");
-  background-repeat: no-repeat;
-  width: 8px;
-  height: 12px;
-  background-position: -10px -42px;
-  opacity: 1;
 }
 
 .breadcrumbs ul li a{
@@ -2258,7 +2242,7 @@ inner
 
 .switch-pages {
   width: 100%;
-  padding-top: 62px;
+  padding-top: 36px;
   padding-bottom: 70px;
   
 }
@@ -2281,7 +2265,7 @@ inner
   font-size: 13px;
   line-height: 18px;
   font-weight: bold;
-  margin: 5px;
+  margin: 3px;
 }
 
 .pages a:first-child {
@@ -2289,7 +2273,7 @@ inner
 }
 
 .pages a:last-child {
-  padding: 10px 30px;
+  padding: 10px 35px;
 }
 
 .pages a:hover {
@@ -2305,8 +2289,8 @@ inner
 .on-product-pages {
   width: 100%;
   background: #f2f6f8;
-  padding-top: 45px;
-  padding-bottom: 65px;
+  padding-top: 40px;
+  padding-bottom: 70px;
 }
 
 .on-product {
