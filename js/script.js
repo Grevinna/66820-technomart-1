@@ -29,56 +29,56 @@
 //		  <!--  Скрипт, открывающий/закрывающий попап от ссылки "купить". 
 //    -->
    
-      var link = document.querySelector(".btn-mail");
-      var popup = document.querySelector(".modal-content");
-      var close = popup.querySelector(".modal-content-close");
+      var basketLink = document.querySelector(".buy");
+      var basketPopup = document.querySelector(".modal-content-basket");
+      var basketClose = basketPopup.querySelector(".modal-content-close");
 
-      link.addEventListener("click", function(event) {
+      basketLink.addEventListener("click", function(event) {
         event.preventDefault();
-        popup.classList.add("modal-content-show");
+        basketPopup.classList.add("modal-content-basket-show");
       });
 
-      close.addEventListener("click", function(event) {
+      basketClose.addEventListener("click", function(event) {
         event.preventDefault();
-        popup.classList.remove("modal-content-show");
-        popup.classList.remove("modal-error");
+        basketPopup.classList.remove("modal-content-basket-show");
+        basketPopup.classList.remove("modal-error");
       });
 
       window.addEventListener("keydown", function(event) {
         if (event.keyCode === 27) {
-          if (popup.classList.contains("modal-content-show")) {
-            popup.classList.remove("modal-content-show");
-            popup.classList.remove("modal-error");
+          if (basketPopup.classList.contains("modal-content-basket-show")) {
+            basketPopup.classList.remove("modal-content-basket-show");
+            basketPopup.classList.remove("modal-error");
           }
         }
       });
-		
+
 //		  <!--  Скрипт, открывающий/закрывающий попап от ссылки "карта". 
 //    -->
    
-//      var link = document.querySelector(".btn-map");
-//      var popup = document.querySelector(".modal-content-map");
-//      var close = popup.querySelector(".modal-content-close");
-//
-//      link.addEventListener("click", function(event) {
-//        event.preventDefault();
-//        popup.classList.add("modal-content-map-show ");
-//      });
-//
-//      close.addEventListener("click", function(event) {
-//        event.preventDefault();
-//        popup.classList.remove("modal-content-map-show");
-//        popup.classList.remove("modal-error");
-//      });
-//
-//      window.addEventListener("keydown", function(event) {
-//        if (event.keyCode === 27) {
-//          if (popup.classList.contains("modal-content-map-show")) {
-//            popup.classList.remove("modal-content-map-show");
-//            popup.classList.remove("modal-error");
-//          }
-//        }
-//      });
+      var mapLink = document.querySelector(".btn-map");
+      var mapPopup = document.querySelector(".modal-content-map");
+      var mapClose = mapPopup.querySelector(".modal-content-close");
+
+      mapLink.addEventListener("click", function(event) {
+        event.preventDefault();
+        mapPopup.classList.add("modal-content-map-show ");
+      });
+
+      mapClose.addEventListener("click", function(event) {
+        event.preventDefault();
+        mapPopup.classList.remove("modal-content-map-show");
+        mapPopup.classList.remove("modal-error");
+      });
+
+      window.addEventListener("keydown", function(event) {
+        if (event.keyCode === 27) {
+          if (mapPopup.classList.contains("modal-content-map-show")) {
+            mapPopup.classList.remove("modal-content-map-show");
+            mapPopup.classList.remove("modal-error");
+          }
+        }
+      });
 		
 
 

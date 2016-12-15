@@ -2239,9 +2239,7 @@ inner
 Не понятно, как лучше позиционировать относительно вьюпорта. К какому блоку привязывать? Ведь на главной (index) тоже есть блочки с товарами, они же тоже должны "срабатывать". Как сделать так, чтобы клик по товару отражался к корзине? JS? или это уже лишнее? (или я не так поняла ТЗ) 
 */
 
-.modal-content-basket {
-	display: block;
-}
+
 
 .modal-content-basket {
   display: none;
@@ -2260,6 +2258,9 @@ inner
   border-top: 7px solid #ee3643;
 }
 
+.modal-content-basket-show {
+	display: block;
+}
 
 .modal-content-basket p {
   margin: 25px;
@@ -2346,12 +2347,6 @@ inner
   width: 36px;
   height: 7px;
 }
-
-
-
-
-
-
 
 
 
