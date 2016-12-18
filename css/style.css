@@ -268,12 +268,13 @@ h2 {
   justify-content: flex-start;
 	align-items: flex-start;
   width: 940px;
-	max-width: 940px;
+	box-sizing: border-box;
   margin: auto;
   margin-bottom: 26px;
 }
 
 .caption {
+	display: block;
   width: 200px;
 	box-sizing: border-box;
   color: #ee3643;
@@ -395,6 +396,7 @@ h2 {
 
 /* main-navigation */
 
+
 .list-main-navigation {
   display: flex;
   flex-direction: row;
@@ -404,7 +406,8 @@ h2 {
   background: #32425c;
   box-shadow: 0 5px #293449;
 	
-  width: 900px;
+  width: 940px;
+	box-sizing: border-box;
   margin: auto;
   text-transform: none;
   list-style: none;
