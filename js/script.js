@@ -1,4 +1,3 @@
-
 // <!--  Скрипт, открывающий/закрывающий попап от ссылки "Напишите нам!". 
 //    --> 
    
@@ -26,10 +25,37 @@
         }
       });
 		
-//		  <!--  Скрипт, открывающий/закрывающий попап от ссылки "купить". 
+//		  <!--  Скрипт, открывающий/закрывающий попап от ссылки "карта". 
 //    -->
    
-      var basketLink = document.querySelector(".buy");
+      var mapLink = document.querySelector(".btn-map");
+      var mapPopup = document.querySelector(".modal-content-map");
+      var mapClose = mapPopup.querySelector(".modal-content-close");
+
+      mapLink.addEventListener("click", function(event) {
+        event.preventDefault();
+        mapPopup.classList.add("modal-content-map-show");
+      });
+
+      mapClose.addEventListener("click", function(event) {
+        event.preventDefault();
+        mapPopup.classList.remove("modal-content-map-show");
+        mapPopup.classList.remove("modal-error");
+      });
+
+      window.addEventListener("keydown", function(event) {
+        if (event.keyCode === 27) {
+          if (mapPopup.classList.contains("modal-content-map-show")) {
+            mapPopup.classList.remove("modal-content-map-show");
+            mapPopup.classList.remove("modal-error");
+          }
+        }
+      });
+
+//		  <!--  Скрипт, открывающий/закрывающий попап от ссылки "купить". 
+//    -->
+
+      var basketLink = document.querySelectorAll(".buy");
       var basketPopup = document.querySelector(".modal-content-basket");
       var basketClose = basketPopup.querySelector(".modal-content-close");
 
@@ -53,33 +79,6 @@
         }
       });
 
-//		  <!--  Скрипт, открывающий/закрывающий попап от ссылки "карта". 
-//    -->
-   
-      var mapLink = document.querySelector(".btn-map");
-      var mapPopup = document.querySelector(".modal-content-map");
-      var mapClose = mapPopup.querySelector(".modal-content-close");
-
-      mapLink.addEventListener("click", function(event) {
-        event.preventDefault();
-        mapPopup.classList.add("modal-content-map-show ");
-      });
-
-      mapClose.addEventListener("click", function(event) {
-        event.preventDefault();
-        mapPopup.classList.remove("modal-content-map-show");
-        mapPopup.classList.remove("modal-error");
-      });
-
-      window.addEventListener("keydown", function(event) {
-        if (event.keyCode === 27) {
-          if (mapPopup.classList.contains("modal-content-map-show")) {
-            mapPopup.classList.remove("modal-content-map-show");
-            mapPopup.classList.remove("modal-error");
-          }
-        }
-      });
-		
 
 
 

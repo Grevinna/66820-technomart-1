@@ -82,7 +82,7 @@ h2 {
 
 .search {
   color: #ffffff;
-  background-color: #293449;
+  background-color: inherit;
   border: none;
   text-align: left;
   font-size: 17px;
@@ -95,7 +95,7 @@ h2 {
 
 .btn-search {
   position: absolute;
-  width: 50px;
+  width: 48px;
   height: 42px;
   cursor:pointer;
   left: 0px;
@@ -268,12 +268,14 @@ h2 {
   justify-content: flex-start;
 	align-items: flex-start;
   width: 940px;
+	max-width: 940px;
   margin: auto;
   margin-bottom: 26px;
 }
 
 .caption {
   width: 200px;
+	box-sizing: border-box;
   color: #ee3643;
   font-style: italic;
   font-size: 16px;
@@ -743,6 +745,7 @@ margin-bottom: 0px;
   flex-wrap: wrap;
   justify-content: space-between;
 	margin-bottom: 10px;
+	width: 940px;
 }
 
 .manufacturers-list-item {
@@ -1246,8 +1249,11 @@ inner
 
 */
 
+.btn-cart-red {
+  background-color: #ee3643;	
+}
+
 /* .privat-user-block */
-/* должны ли иконки одновременно реагировати на курсор? Прошу обратить внимание на этот момент. Правильно ли он осуществлен? */
 
 .privat-user-block {
   width: 300px;
@@ -1739,6 +1745,11 @@ inner
 
 .sorting-item:active {
   color: #ee3643;
+  border-bottom: 0px;
+}
+
+.sorting-item-active {
+	color: #ee3643;
   border-bottom: 0px;
 }
 
