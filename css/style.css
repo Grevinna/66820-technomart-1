@@ -22,8 +22,13 @@ h2 {
 /* Header */
 
 .container-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   padding-bottom: 65px;
   background-color: #f1f5f7;
 	margin-bottom: 9px;
@@ -38,8 +43,13 @@ h2 {
 }
 
 .panel-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   width: 940px;
   margin: 0 auto;
 }
@@ -82,15 +92,16 @@ h2 {
 
 .search {
   color: #ffffff;
-  background-color: inherit;
+  background-color: #293449;
   border: none;
   text-align: left;
   font-size: 17px;
-	font-family: inherit;
+	font-family:  "Cuprum","PT Sans", "Arial", sans-serif;
   padding-left: 48px;
 	padding-top: 0px;
   min-height: 42px;
 	width: 265px;
+	box-sizing: border-box;
 }
 
 .btn-search {
@@ -99,8 +110,12 @@ h2 {
   height: 42px;
   cursor:pointer;
   left: 0px;
-  background-color: inherit;
+  background-color: #293449;
   border: none;
+}
+
+.search:focus + .btn-search {
+	background-color: #ffffff;
 }
 
 .btn-search::after {
@@ -108,7 +123,8 @@ h2 {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   background-image: url("../img/sprite.png");
   background-repeat: no-repeat;
   width: 17px;
@@ -207,7 +223,8 @@ h2 {
   position: absolute;
   top: 48%;
   left: 15%;
-  transform:translate(-50%, -50%);
+  -webkit-transform:translate(-50%, -50%);
+          transform:translate(-50%, -50%);
   background-image: url("../img/sprite.png");
   background-repeat: no-repeat;
 }
@@ -263,10 +280,19 @@ h2 {
 /* contacts-user  */
 
 .contacts-user {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-	align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+	-webkit-box-align: start;
+	    -ms-flex-align: start;
+	        align-items: flex-start;
   width: 940px;
 	box-sizing: border-box;
   margin: auto;
@@ -308,7 +334,8 @@ h2 {
   position: absolute;
   top: 50%;
   left: 8%;
-  transform:translate(-50%, -50%);
+  -webkit-transform:translate(-50%, -50%);
+          transform:translate(-50%, -50%);
   background-image: url("../img/sprite.png");
   background-repeat: no-repeat;
   width: 19px;
@@ -363,7 +390,8 @@ h2 {
   position: absolute;
   top: 50%;
   left: 20%;
-  transform:translate(-50%, -50%);
+  -webkit-transform:translate(-50%, -50%);
+          transform:translate(-50%, -50%);
   background-image: url("../img/sprite.png");
   background-repeat: no-repeat;
   width: 20px;
@@ -398,9 +426,15 @@ h2 {
 
 
 .list-main-navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 	
   color: #ffffff;
   background: #32425c;
@@ -439,33 +473,55 @@ h2 {
 }
 
 
-/* index тело станицы */
+/* 
+
+index тело станицы
+
+*/
 
 
 /* container */
 
 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex; 
-  flex-direction: column;
-  justify-content: center;
+  -webkit-box-orient: vertical; 
+  -webkit-box-direction: normal; 
+      -ms-flex-direction: column; 
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: auto;
 }
 
 .section-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 940px;
   margin: 0 auto;
   margin-bottom: 50px;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 /* .features */
 
 .features {
-  justify-content: space-between;
-  align-self: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
   color: #ffffff;
   margin-top: 50px;
 	margin-bottom: 52px;
@@ -583,7 +639,8 @@ h2 {
 .sliders::before {
 	content: "";
   position: absolute;
-  transform:translate(-50%, -50%);
+  -webkit-transform:translate(-50%, -50%);
+          transform:translate(-50%, -50%);
   background-image: url("../img/sprite.png");
   background-repeat: no-repeat;
 }
@@ -685,8 +742,13 @@ h2 {
 }
 
 .features-item-after-slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex; 
-  flex-direction: column;
+  -webkit-box-orient: vertical; 
+  -webkit-box-direction: normal; 
+      -ms-flex-direction: column; 
+          flex-direction: column;
 }
 
 /* .goods, .manufacturers */
@@ -697,9 +759,15 @@ margin-bottom: 0px;
 
 .popular-goods,
 .popular-manufacturers {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-	align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
   width: 940px;
 	min-height: 90px;
   background: #f7f3ec;
@@ -736,17 +804,26 @@ margin-bottom: 0px;
 }
 
 .goods-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 940px;
 }
 
 /* .manufacturers-list */
 
 .manufacturers-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 	margin-bottom: 10px;
 	width: 940px;
 }
@@ -775,24 +852,39 @@ margin-bottom: 0px;
 }
 
 .services {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   padding-bottom: 0px;
   margin-bottom: 0px;
 }
 
 .services-slogan {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 400px;
   margin-top: 65px; 
   margin-bottom: 70px;
 }
 
 .about-services {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .paper-btn-selector {
@@ -926,8 +1018,12 @@ margin-bottom: 0px;
 /*.technomart-company*/
 
 .technomart-company {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-bottom: 82px;
 }
 
@@ -1039,11 +1135,20 @@ footer
 
 */
 
+
 .footer-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap; 
-  flex-direction: column;
-  justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; 
+  -webkit-box-orient: vertical; 
+  -webkit-box-direction: normal; 
+      -ms-flex-direction: column; 
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   color: #ffffff;
   background: #293449;
   font-size: 18px;
@@ -1059,17 +1164,29 @@ footer
 }
 
 .logo-navigation-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   width: 940px;
   margin: auto;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-bottom: 30px;
 }
 
 .index-logo-adress {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 footer .index-logo-cover {
@@ -1085,14 +1202,26 @@ footer .index-logo {
 }
 
 .footer-navigations {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .footer-navigation ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .footer-navigation ul a {
@@ -1110,9 +1239,16 @@ footer .index-logo {
 }
 
 .footer-navigation-goods ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .footer-navigation-goods ul a {
@@ -1151,12 +1287,21 @@ li {
 }
 
 .social-copyright-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   width: 940px;
   margin: auto;
-  justify-content: space-between;
-	align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
   font-size: 16px;
   line-height: 18px;
   margin-top: 35px;
@@ -1221,7 +1366,8 @@ li {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform:translate(-50%, -50%);
+  -webkit-transform:translate(-50%, -50%);
+          transform:translate(-50%, -50%);
   background-image: url("../img/sprite.png");
   background-repeat: no-repeat;
 }
@@ -1274,7 +1420,8 @@ inner
   position: absolute;
   top: 50%;
   left: 9%;
-  transform:translate(-50%, -50%);
+  -webkit-transform:translate(-50%, -50%);
+          transform:translate(-50%, -50%);
   background-image: url("../img/sprite.png");
   background-repeat: no-repeat;
   width: 20px;
@@ -1316,7 +1463,8 @@ inner
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   background-image: url("../img/sprite.png");
   background-repeat: no-repeat;
   width: 21px;
@@ -1383,10 +1531,17 @@ inner
 /*.breadcrumbs*/
 
 .breadcrumbs ul{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: relative;
-  flex-direction: row;
-	align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+	-webkit-box-align: start;
+	    -ms-flex-align: start;
+	        align-items: flex-start;
   width: 940px;
   margin: auto;
   padding: 0px;
@@ -1413,7 +1568,8 @@ inner
   position: absolute;
   top: 40%;
   left: 32px;
-  transform:translate(-50%, -50%);
+  -webkit-transform:translate(-50%, -50%);
+          transform:translate(-50%, -50%);
   background-image: url("../img/sprite.breadcrumbs.png");
   background-repeat: no-repeat;
   width: 8px;
@@ -1458,8 +1614,13 @@ inner
 /* .inner-main-content */
 
 .inner-main-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   width: 940px;
   margin: auto;
 }
@@ -1467,8 +1628,13 @@ inner
 /* .filter */
 
 .filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 220px;
   margin-right: 20px;
 }
@@ -1598,8 +1764,13 @@ inner
 /*.manufacturer-item, .еnergy */
 
 .manufacturer-item, .еnergy {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   font-family: "PT Sans", sans-serif;
   vertical-align: top;
   text-align: left;
@@ -1609,23 +1780,24 @@ inner
   text-transform: uppercase;
 }
 
-.manufacturer-item input + label, .еnergy input + label {
+.manufacturer-input + label, .еnergy-input + label {
   position: relative;
   padding: 10px;
   padding-left: 35px;
   cursor: pointer;
 }
 
-.manufacturer-item input[type="checkbox"], .еnergy input[type="radio"] {
+.manufacturer-input[type="checkbox"], .еnergy-input[type="radio"] {
   display: none;
 }
 
-.manufacturer-item input[type="checkbox"] + label::before {
+.manufacturer-input[type="checkbox"] + label::before {
   content: "";
   position: absolute;
   top: 50%;
   left: 5%;
-  transform:translate(-50%, -50%);
+  -webkit-transform:translate(-50%, -50%);
+          transform:translate(-50%, -50%);
   background-image: url("../img/sprite.png");
   background-repeat: no-repeat;
   width: 23px;
@@ -1634,12 +1806,13 @@ inner
   opacity: 1;
 }
 
- .manufacturer-item input[type="checkbox"]:checked + label::before{
+ .manufacturer-input[type="checkbox"]:checked + label::before{
   content: "";
   position: absolute;
   top: 50%;
   left: 6%;
-  transform:translate(-50%, -50%);
+  -webkit-transform:translate(-50%, -50%);
+          transform:translate(-50%, -50%);
   background-image: url("../img/sprite.png");
   background-repeat: no-repeat;
   width: 27px;
@@ -1648,12 +1821,13 @@ inner
   opacity: 1;
 }
 
-.еnergy input[type="radio"] + label::before {
+.еnergy-input[type="radio"] + label::before {
   content: "";
   position: absolute;
   top: 50%;
   left: 5%;
-  transform:translate(-50%, -50%);
+  -webkit-transform:translate(-50%, -50%);
+          transform:translate(-50%, -50%);
   background-image: url("../img/sprite.png");
   background-repeat: no-repeat;
   width: 25px;
@@ -1662,12 +1836,13 @@ inner
   opacity: 1;
 } 
 
-.еnergy input[type="radio"]:checked + label::before {
+.еnergy-input[type="radio"]:checked + label::before {
   content: "";
   position: absolute;
   top: 50%;
   left: 5%;
-  transform:translate(-50%, -50%);
+  -webkit-transform:translate(-50%, -50%);
+          transform:translate(-50%, -50%);
   background-image: url("../img/sprite.png");
   background-repeat: no-repeat;
   width: 25px;
@@ -1676,7 +1851,7 @@ inner
   opacity: 1;
 }
 
-.btn-filter input {
+.btn-filter-input {
   color: #000000;
   text-decoration: none;
   text-transform: uppercase;
@@ -1694,16 +1869,26 @@ inner
 /* .sorting */
 
 .sorting {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 700px;
 }
 
 /* .sorting-tool */
 
 .sorting-tool {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-	align-items: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	white-space: nowrap;
   font-size: 13px;
   line-height: 34px;
   text-align: left;
@@ -1810,10 +1995,18 @@ inner
 /* .sorting-goods-list */
 
 .sorting-goods-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 /* .goods-items */
@@ -1887,7 +2080,8 @@ inner
   position: absolute;
   top: 50%;
   left: 15%;
-  transform:translate(-50%, -50%);
+  -webkit-transform:translate(-50%, -50%);
+          transform:translate(-50%, -50%);
   background-image: url("../img/sprite.png");
   background-repeat: no-repeat;
   width: 17px;
@@ -1978,7 +2172,6 @@ inner
 }
 
 /* .pages */
-/* Индикатор активности (находимся на этой странице) не сделан: какой селектор в этом случае правильно использовать? */
 
 .switch-pages {
   width: 100%;
@@ -2055,13 +2248,7 @@ inner
 }
 
 
-
-
 /* Всплывающая карта */
-/* Всплывающая карта так и не завершена, скрипты не прописаны.
-   Не разобралась с нюансами, как лучше и правильнее делать и  в каком случае. Говорят, что в основном надо вставлять интерактивную  (яндекс, гугл), но хочется понять суть способов.
-*/
-
 
 
 .modal-content-map {
@@ -2094,11 +2281,7 @@ inner
 }
 
 
-
-
 /* Всплывающая форма */
-
-
 
 
 .modal-content-mail {
@@ -2144,17 +2327,24 @@ inner
 }
 
 .modal-content-close::before {
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .modal-content-close::after {
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .modal-content .mail-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .mail-form input[type="text"],
@@ -2209,50 +2399,85 @@ inner
 
 .modal-content-show {
   display: block;
-  animation: bounce 0.6s;
+  -webkit-animation: bounce 0.6s;
+          animation: bounce 0.6s;
+}
+
+@-webkit-keyframes bounce {
+  0%   {
+    -webkit-transform: translateY(-2000px);
+            transform: translateY(-2000px);
+  }
+  70%  {
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+  }
+  90%  {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }
 
 @keyframes bounce {
   0%   {
-    transform: translateY(-2000px);
+    -webkit-transform: translateY(-2000px);
+            transform: translateY(-2000px);
   }
   70%  {
-    transform: translateY(30px);
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
   }
   90%  {
-    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
   }
   100% {
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
 .modal-error {
-  animation: shake 0.6s;
+  -webkit-animation: shake 0.6s;
+          animation: shake 0.6s;
+}
+
+@-webkit-keyframes shake {
+  0%, 100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
 }
 
 @keyframes shake {
   0%, 100% {
-    transform: translateX(0);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
   10%, 30%, 50%, 70%, 90% {
-    transform: translateX(-10px);
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
   }
   20%, 40%, 60%, 80% {
-    transform: translateX(10px);
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
   }
 }
 
 
-
-
-
 /* попап добавления в корзину */
-
-/*
-Не понятно, как лучше позиционировать относительно вьюпорта. К какому блоку привязывать? Ведь на главной (index) тоже есть блочки с товарами, они же тоже должны "срабатывать". Как сделать так, чтобы клик по товару отражался к корзине? JS? или это уже лишнее? (или я не так поняла ТЗ) 
-*/
-
 
 
 .modal-content-basket {
@@ -2347,7 +2572,8 @@ inner
 }
 
 .check::before {
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
   top: 37px;
   left: 13px;
   width: 20px;
@@ -2355,13 +2581,13 @@ inner
 }
 
 .check::after {
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
   top: 33px;
   left: 21px;
   width: 36px;
   height: 7px;
 }
-
 
 
 
